@@ -62,7 +62,7 @@ public class Sanguchetto {
 	 * @return
 	 */
 	public Double getPrecio(){
-		Double precioTotal = (double) 0;
+		Double precioTotal = 0.0;
 		
 		for (Ingrediente cadaElemento : ingredientes)
 			precioTotal += cadaElemento.getPrecio();

@@ -17,7 +17,7 @@ confirmar que lleva a una pantalla donde se muestra como queda el carrito y su p
 3. Una pantalla para dar de alta un producto
 4. Una pantalla para agregar stock a determinado producto, es decir se suma a lo que tiene
 5. Una pantalla para eliminar el stock de un producto.
-6. Implementar los test cases de la clase Carrito, se provee la clase con metodos sin implementar
+6. ~~Implementar los test cases de la clase Carrito, se provee la clase con metodos sin implementar~~
 
 Se provee:
 

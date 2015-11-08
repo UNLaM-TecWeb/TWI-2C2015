@@ -6,7 +6,7 @@ import java.util.Set;
 
 /**
  * Maneja un stock de ingredientes, el mismo puede ser asociado a una cantidad.<br>
- * No persiste, es decir, luego de la ejecucion del programa el Stock se inicialza vacio.<br>
+ * No persiste, es decir, luego de la ejecucion del programa el Stock se inicializa vacio.<br>
  * @author sismael
  *
  */

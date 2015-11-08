@@ -5,6 +5,16 @@ public class Ingrediente {
     private String nombre;
     private Double precio;
     private TipoIngrediente tipo;
+
+    /*
+     * Este constructor lo agregué yo, no es original del TP. Lo consulté con el profe antes de hacerlo. Me dió el Ok.
+     * 
+     */
+    public Ingrediente(String nombre, Double precio, TipoIngrediente tipo) {
+    	this.nombre = nombre;
+    	this.precio = precio;
+    	this.tipo = tipo;
+    }
     
     public String getNombre() {
         return nombre;
