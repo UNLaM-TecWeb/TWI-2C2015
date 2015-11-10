@@ -9,14 +9,15 @@
         <title>Sanguchetto S.A.</title>
     </head>
     <body>
-        <h1>Programando Sanguchetto<br>Taller Web Java</h1>
+        <h1>Programando Sanguchettoo TEST<br>Taller Web Java</h1>
         <div>
             <%-- Menu de opciones --%>
-            <a href="stock/test" class="btn btn-lg btn-link">Inicio</a> |
+            <a href="index.jsp" class="btn btn-lg btn-link">Inicio</a> |
             <a href="mostrarStockProducto.jsp" class="btn btn-lg btn-link">Mostrar Stock Producto existente</a> |
             <a href="darAltaProducto.jsp" class="btn btn-lg btn-link">Dar Alta a Producto</a> |
             <a href="agregarStock.jsp" class="btn btn-lg btn-link">Agregar a Stock</a> |
             <a href="eliminarProducto.jsp" class="btn btn-lg btn-link">Eliminar Producto</a>
+            <a href="test.jsp" class="btn btn-lg btn-link">Eliminar Producto</a>
         </div>
         <br >
         <div>

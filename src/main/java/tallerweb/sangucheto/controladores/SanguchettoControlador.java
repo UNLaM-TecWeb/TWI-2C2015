@@ -18,6 +18,11 @@ import tallerweb.sangucheto.modelo.TipoIngrediente;
 
 public class SanguchettoControlador {
 	
+	@RequestMapping("/aloja")
+	 public ModelAndView test(){
+		 return new ModelAndView("aloja");
+	 }
+	
 	private Stock s = Stock.getInstance();
 	// Se trata de implementar "Una pantalla que muestre el stock de todos los productos existentes"
 	
@@ -33,7 +38,7 @@ public class SanguchettoControlador {
 		
 		return mav;
 		
-		
-		
 	}
+	
+	 
 }
