@@ -16,6 +16,8 @@ public class Ingrediente {
     	this.tipo = tipo;
     }
     
+    public Ingrediente() {}
+    
     public String getNombre() {
         return nombre;
     }
