@@ -21,8 +21,7 @@ public class SanguchettoControlador {
 	@RequestMapping("/crearIngrediente")
 	public ModelAndView crearIngrediente(@ModelAttribute("ingrediente") Ingrediente ingrediente) {
 		Stock.getInstance().agregarIngrediente(ingrediente);
-		ModelAndView mav = new ModelAndView("listaingredientes");
-		return mav;
+		return new ModelAndView("redirect:listaingredientes");
 	}
 	
 	@RequestMapping("/listaIngredientes")

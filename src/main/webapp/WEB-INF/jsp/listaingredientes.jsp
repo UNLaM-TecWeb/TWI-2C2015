@@ -24,10 +24,10 @@
 		</tr>
 		<c:forEach var="each" items="${lista}">
 			<tr>
-				<td>${each.ingrediente}</td>
+				<td>${each.nombre}</td>
 				<td>${each.precio}</td>
-				<td>${each.tipo}</td>
-				<td>${each.stock}</td>
+				<td>&#45;<!--{each.tipo}--></td>
+				<td>&#45;<!--{each.stock}--></td>
 			</tr>
 		</c:forEach>
 	</table>	

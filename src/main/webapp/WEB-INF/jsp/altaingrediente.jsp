@@ -22,11 +22,11 @@
             <p>Precio</p>
             <form:input path="precio"/>
                 
-            <p>Tipo</p>
+            <!--<p>Tipo</p>
             <form:select path="tipo">
                 <form:option value="INGREDIENTE" label="Ingrediente"/>
                 <form:option value="CONDIMENTO" label="Condimento"/>
-            </form:select>
+            </form:select>-->
         
             <input type="submit"/>
             <input type="reset"/>
