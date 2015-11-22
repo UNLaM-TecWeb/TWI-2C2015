@@ -7,7 +7,7 @@ Enunciado
 -
 
 ### Funcionalidades a desarrollar
-1. Una pantalla para que se agreguen productos al carrito. 
+1. Una pantalla para que se agreguen productos al carrito.
 	a. que se descuentan del stock.
 	b. que vaya mostrando el precio total del carrito a medida que se agregan cosas al mismo. 
 	c. Además se puede agregar descuentos que pueden ser monto o porcentaje de descuento. 
@@ -17,7 +17,7 @@ Enunciado
 		1. cancelar, que elimina todo lo agregado al carrito y lo restituye al stock; 
 		2. y confirmar, que lleva a una pantalla donde se muestra como queda el carrito y su precio final.
 2. Una pantalla que muestre el stock de todos los productos existentes.
-3. Una pantalla para dar de alta un producto.
+3. Una pantalla para dar de alta un ~~producto~~ ingrediente.
 4. Una pantalla para agregar stock a determinado producto, es decir se suma a lo que tiene.
 5. Una pantalla para eliminar el stock de un producto.
 6. ~~Implementar los test cases de la clase Carrito, se provee la clase con metodos sin implementar.~~
