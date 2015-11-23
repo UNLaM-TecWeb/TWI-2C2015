@@ -26,8 +26,8 @@
 			<tr>
 				<td>${each.nombre}</td>
 				<td>${each.precio}</td>
-				<td>&#45;<!--{each.tipo}--></td>
-				<td>&#45;<!--{each.stock}--></td>
+				<td>${each.tipo}</td>
+				<td><!--{each.get}--></td>
 			</tr>
 		</c:forEach>
 	</table>	
