@@ -22,12 +22,12 @@
 			<td>TIPO</td>
 			<td>STOCK</td>
 		</tr>
-		<c:forEach var="each" items="${lista}">
+		<c:forEach var="ingrediente" items="${mapa}">
 			<tr>
-				<td>${each.nombre}</td>
-				<td>${each.precio}</td>
-				<td>${each.tipo}</td>
-				<td><!--{each.get}--></td>
+				<td>${ingrediente.key.nombre}</td>
+				<td>${ingrediente.key.precio}</td>
+				<td>${ingrediente.key.tipo}</td>
+				<td>${ingrediente.value}</td>
 			</tr>
 		</c:forEach>
 	</table>	
