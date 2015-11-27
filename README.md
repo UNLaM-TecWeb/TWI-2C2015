@@ -6,7 +6,7 @@ Trabajo Práctico final para la cátedra Taller Web I. Universidad Nacional de L
 Enunciado
 -
 
-### Funcionalidades a desarrollar
+### Funcionalidades a desarrollar:
 1. Una pantalla para que se agreguen productos al carrito.
 	a. que se descuentan del stock.
 	b. que vaya mostrando el precio total del carrito a medida que se agregan cosas al mismo. 
@@ -28,3 +28,7 @@ Enunciado
 - la clase Carrito con los metodos sin implementar, para completar por los alumnos.
 
 ### _La metodología de trabajo es en grupos de 2 personas, sin excepción._
+
+### Anotaciones:
+- http://www.mkyong.com/spring-mvc/spring-mvc-how-to-include-js-or-css-files-in-a-jsp-page/
+- aplicar primero monto y despues descuento

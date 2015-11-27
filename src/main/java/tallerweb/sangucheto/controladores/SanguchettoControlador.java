@@ -8,7 +8,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import tallerweb.sangucheto.modelo.Ingrediente;
 import tallerweb.sangucheto.modelo.Stock;
-// http://www.mkyong.com/spring-mvc/spring-mvc-how-to-include-js-or-css-files-in-a-jsp-page/
+
 @Controller
 public class SanguchettoControlador {
 	

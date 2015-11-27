@@ -1,4 +1,5 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,8 +9,8 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Sangucheto&#58; Alta de ingrediente</title>
     <!-- Bootstrap -->
-    <link href="../../css/bootstrap-theme.min.css" type="text/css" rel="stylesheet" media="screen">
-    <link href="../../css/bootstrap.min.css" type="text/css" rel="stylesheet" media="screen">
+    <link href='<c:url value="/css/bootstrap-theme.min.css" />' type="text/css" rel="stylesheet" media="screen">
+    <link href='<c:url value="/css/bootstrap.min.css" />' type="text/css" rel="stylesheet" media="screen">
 </head>
 
 <body>
@@ -33,8 +34,8 @@
         </form:form>
     
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="../../js/jquery-1.11.3.min.js" type="text/javascript"></script>
+    <script src='<c:url value="/js/jquery-1.11.3.min.js" />' type="text/javascript"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="../../js/bootstrap.min.js" type="text/javascript" ></script>
+    <script src='<c:url value="/js/bootstrap.min.js" />' type="text/javascript" ></script>
 </body>
 </html>

@@ -9,34 +9,16 @@
         <title>Sanguchetto S.A.</title>
     </head>
     <body>
-        <h1>Programando Sanguchetto<br>Taller Web Java</h1>
-        <div>
-            <%-- Menu de opciones --%>
-            <a href="stock/test" class="btn btn-lg btn-link">Inicio</a> |
-            <a href="mostrarStockProducto.jsp" class="btn btn-lg btn-link">Mostrar Stock Producto existente</a> |
-            <a href="darAltaProducto.jsp" class="btn btn-lg btn-link">Dar Alta a Producto</a> |
-            <a href="agregarStock.jsp" class="btn btn-lg btn-link">Agregar a Stock</a> |
-            <a href="eliminarProducto.jsp" class="btn btn-lg btn-link">Eliminar Producto</a>
+        
+        <div class="container">
+	        <div><h1>Sanguchetto</h1></div>
+		        <div>
+		            <%-- Menu de opciones --%>
+		            <a href="listaIngredientes" class="btn btn-lg btn-primary">Listar ingredientes</a>
+		            <a href="altaIngrediente" class="btn btn-lg btn-primary">Alta de ingredientes</a>
+		            <a href="elegirIngrediente" class="btn btn-lg btn-primary">Agregar stock</a>
+		        </div>
         </div>
-        <br >
-        <div>
-            <table border="1">
-                <tr style="background-color: chocolate">
-                    <td colspan="4">Lista de Productos</td>
-
-                </tr>
-                <tr style="background-color: chocolate">
-                    <td>Codigo</td>
-                    <td>Nombre</td>
-                    <td>Precio</td>
-                    <td>Proceso</td>
-                </tr>
-                <%-- Lista de todos los productos --%>
-               
-
-            </table>
-        </div>
-
 
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 	<script src="js/jquery-1.11.3.min.js"></script>
