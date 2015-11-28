@@ -10,14 +10,26 @@
     </head>
     <body>
         
-        <div class="container">
-	        <div><h1>Sanguchetto</h1></div>
+        <div class="row">
+	        <div class="col-md-2 col-md-offset-5"><h1>Sanguchetto</h1></div>
+	        </div>
 		        <div>
 		            <%-- Menu de opciones --%>
+		            <li>
 		            <a href="listaIngredientes" class="btn btn-lg btn-primary">Listar ingredientes</a>
+		            </li>
+		            <br>
+		            <li>
 		            <a href="altaIngrediente" class="btn btn-lg btn-primary">Alta de ingredientes</a>
-		            <a href="cargarListaConIngredientes?accion=agregar" class="btn btn-lg btn-primary">Agregar stock</a>
+		            </li>
+		            <br>
+		            <li>
+		            <a <a href="cargarListaConIngredientes?accion=agregar" class="btn btn-lg btn-primary">Agregar Stock</a>
+		            </li>
+		            <br>
+		            <li>
 		            <a href="cargarListaConIngredientes?accion=eliminar" class="btn btn-lg btn-primary">Eliminar stock</a>
+		        	</li>
 		        </div>
         </div>
 
