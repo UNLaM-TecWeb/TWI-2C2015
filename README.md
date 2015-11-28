@@ -1,5 +1,5 @@
 # UNLaM-TallerWebI-Sanguchetto
-Trabajo PrÃ¡ctico final para la cÃ¡tedra Taller Web I. Universidad Nacional de La Matanza.
+Trabajo Práctico final para la cátedra Taller Web I. Universidad Nacional de La Matanza.
 
 ---
 
