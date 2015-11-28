@@ -3,7 +3,6 @@ package tallerweb.sangucheto.modelo;
 public class IngredienteConStock {
 	private String nombre;
 	private Integer stock;
-	private Ingrediente ingrediente;
 	
 	public IngredienteConStock() {}
 	
@@ -26,9 +25,5 @@ public class IngredienteConStock {
 	
 	public void setStock(Integer stock) {
 		this.stock = stock;
-	}
-	
-	public void setNombreIngrediente(String nombre) {
-		this.ingrediente.setNombre(nombre);
 	}
 }

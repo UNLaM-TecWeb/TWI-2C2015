@@ -15,8 +15,8 @@
 
 <body>
 	
-        <h1>AGREGAR STOCK</h1>
-        <form:form method="post" action="modificarStock?accion=agregar" modelAttribute="ingredienteConStock">
+        <h1>ELIMINAR STOCK</h1>
+        <form:form method="post" action="modificarStock?accion=eliminar" modelAttribute="ingredienteConStock">
             <form:select path="nombre">
 				<c:forEach var="each" items="${mapa}">                
                 	<form:option value="${each.key.nombre}" label="${each.key.nombre}, Stock: ${each.value}"/> 

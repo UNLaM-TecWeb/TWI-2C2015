@@ -3,6 +3,7 @@ package tallerweb.sangucheto.controladores;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import tallerweb.sangucheto.modelo.Ingrediente;
@@ -32,17 +33,29 @@ public class SanguchettoControlador {
 		return mav;
 	}
 	
-	@RequestMapping("/agregarStock")
-	public ModelAndView agregarStock(@ModelAttribute("ingredienteConStock") IngredienteConStock ics){
+	@RequestMapping("/modificarStock")
+	public ModelAndView eliminarStock(	@ModelAttribute("ingredienteConStock") IngredienteConStock ics,
+										@RequestParam("accion") String accion){
 		Ingrediente temporal = new Ingrediente();
 		temporal.setNombre(ics.getNombre());
-		Stock.getInstance().agregarStock(temporal, ics.getStock());
-		return null; 
+		
+		if (accion.equals("agregar"))
+			Stock.getInstance().agregarStock(temporal, ics.getStock());
+		else
+			Stock.getInstance().comprarIngrediente(temporal, ics.getStock());
+
+		return new ModelAndView("redirect:listaIngredientes"); 
 	}
 	
 	@RequestMapping("/cargarListaConIngredientes")
-	public ModelAndView elegirIngrediente() {
-		ModelAndView mav = new ModelAndView("agregarstock");
+	public ModelAndView elegirIngrediente(@RequestParam("accion") String accion) {
+		ModelAndView mav;
+		
+		if (accion.equals("agregar"))
+			mav = new ModelAndView("agregarstock");
+		else
+			mav = new ModelAndView("eliminarstock");
+		
 		mav.addObject("mapa", Stock.getInstance().obtenerStock());
 		mav.addObject("ingredienteConStock", new IngredienteConStock());
 		return mav;
