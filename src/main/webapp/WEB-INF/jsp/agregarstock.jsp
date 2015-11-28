@@ -14,23 +14,17 @@
 </head>
 
 <body>
-	<h1>ALTA DE INGREDIENTE</h1>
-	<form:form method="post" action="crearIngrediente" modelAttribute="ingrediente">
-	    <p>Nombre</p>
-	    <form:input path="nombre"/>
-	        
-	    <p>Precio</p>
-	    <form:input path="precio"/>
-	        
-	    <p>Tipo</p>
-	    <form:select path="tipo">
-	        <form:option value="INGREDIENTE" label="Ingrediente"/>
-	        <form:option value="CONDIMENTO" label="Condimento"/>
-	    </form:select>
 	
-	    <input type="submit"/>
-	    <input type="reset"/>
-	</form:form>
+        <h1>AGREGAR STOCK</h1>
+        <form:form method="post" action="agregarStock" modelAttribute="ingredienteConStock">
+            <form:select path="nombre">
+				<c:forEach var="each" items="${mapa}">                
+                	<form:option value="${each.key.nombre}" label="${each.key.nombre}, Stock: ${each.value}"/> 
+                </c:forEach>
+            </form:select>
+            <form:input path="stock"/>
+            <input type="submit"/>
+        </form:form>
     
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src='<c:url value="/js/jquery-1.11.3.min.js" />' type="text/javascript"></script>

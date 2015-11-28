@@ -16,7 +16,7 @@
 		            <%-- Menu de opciones --%>
 		            <a href="listaIngredientes" class="btn btn-lg btn-primary">Listar ingredientes</a>
 		            <a href="altaIngrediente" class="btn btn-lg btn-primary">Alta de ingredientes</a>
-		            <a href="elegirIngrediente" class="btn btn-lg btn-primary">Agregar stock</a>
+		            <a href="cargarListaConIngredientes" class="btn btn-lg btn-primary">Agregar stock</a>
 		        </div>
         </div>
 
