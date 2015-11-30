@@ -27,7 +27,7 @@ Enunciado
 - la clase Stock completa y 
 - la clase Carrito con los metodos sin implementar, para completar por los alumnos.
 
-### _La metodologÃ­a de trabajo es en grupos de 2 personas, sin excepciÃ³n._
+### _La metodolog�a de trabajo es en grupos de 2 personas, sin excepci�n._
 
 ### Anotaciones:
 - http://www.mkyong.com/spring-mvc/spring-mvc-how-to-include-js-or-css-files-in-a-jsp-page/

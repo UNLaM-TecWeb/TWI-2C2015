@@ -11,26 +11,29 @@
     <body>
         
         <div class="row">
-	        <div class="col-md-2 col-md-offset-5"><h1>Sanguchetto</h1></div>
+	        <div class="col-md-2 col-md-offset-5">
+	        	<h1>Sanguchetto</h1>
 	        </div>
-		        <div>
-		            <%-- Menu de opciones --%>
-		            <li>
-		            <a href="listaIngredientes" class="btn btn-lg btn-primary">Listar ingredientes</a>
-		            </li>
-		            <br>
-		            <li>
-		            <a href="altaIngrediente" class="btn btn-lg btn-primary">Alta de ingredientes</a>
-		            </li>
-		            <br>
-		            <li>
-		            <a <a href="cargarListaConIngredientes?accion=agregar" class="btn btn-lg btn-primary">Agregar Stock</a>
-		            </li>
-		            <br>
-		            <li>
-		            <a href="cargarListaConIngredientes?accion=eliminar" class="btn btn-lg btn-primary">Eliminar stock</a>
-		        	</li>
-		        </div>
+		</div>
+		<div>
+			<%-- Menu de opciones --%>
+			<ul>
+				<li>
+					<a href="cargarListaConIngredientes?accion=armatusangucheto" class="btn btn-lg btn-primary">Arma tu sangucheto</a>
+				</li>
+				<li>
+					<a href="listaIngredientes" class="btn btn-lg btn-primary">Listar ingredientes</a>
+				</li>
+				<li>
+					<a href="altaIngrediente" class="btn btn-lg btn-primary">Alta de ingredientes</a>
+				</li>
+				<li>
+					<a href="cargarListaConIngredientes?accion=agregarstock" class="btn btn-lg btn-primary">Agregar Stock</a>
+				</li>
+				<li>
+					<a href="cargarListaConIngredientes?accion=eliminarstock" class="btn btn-lg btn-primary">Eliminar stock</a>
+				</li>
+			</ul>
         </div>
 
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

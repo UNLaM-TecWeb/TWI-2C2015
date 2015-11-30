@@ -30,6 +30,19 @@ public class Sanguchetto {
 	}
 	
 	/**
+	 * Lista todos los ingredientes y condimentos que forman parte del sanguchetto.<br>
+	 * @return
+	 */
+	public List<Ingrediente> verIngredientesYCondimentos(){
+		List<Ingrediente> listaDeIngredientes = new LinkedList<Ingrediente>();
+		
+		for (Ingrediente cadaElemento : ingredientes)
+			listaDeIngredientes.add(cadaElemento);
+		
+		return listaDeIngredientes;
+	}
+	
+	/**
 	 * Lista todos los ingredientes que forman parte del sanguchetto.<br>
 	 * @return
 	 */

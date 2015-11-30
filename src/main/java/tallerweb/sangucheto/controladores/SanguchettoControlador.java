@@ -8,6 +8,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import tallerweb.sangucheto.modelo.Ingrediente;
 import tallerweb.sangucheto.modelo.IngredienteConStock;
+import tallerweb.sangucheto.modelo.Sanguchetto;
 import tallerweb.sangucheto.modelo.Stock;
 
 @Controller
@@ -51,13 +52,29 @@ public class SanguchettoControlador {
 	public ModelAndView elegirIngrediente(@RequestParam("accion") String accion) {
 		ModelAndView mav;
 		
-		if (accion.equals("agregar"))
+		if (accion.equals("agregarstock")) 
 			mav = new ModelAndView("agregarstock");
-		else
+		
+		else if (accion.equals("eliminarstock"))
 			mav = new ModelAndView("eliminarstock");
+		
+		else {// if (accion.equals("armatusangucheto"))
+			mav = new ModelAndView("armatusangucheto");
+			mav.addObject("sangucheto", Sanguchetto.getInstance().verIngredientesYCondimentos());			
+		}
 		
 		mav.addObject("mapa", Stock.getInstance().obtenerStock());
 		mav.addObject("ingredienteConStock", new IngredienteConStock());
 		return mav;
 	}
+
+	@RequestMapping("/agregarasangucheto")
+	public ModelAndView agregarASangucheto(@ModelAttribute("ingredienteConStock") IngredienteConStock ics) {		
+		Ingrediente temporal = new Ingrediente();
+		temporal.setNombre(ics.getNombre());		
+		Sanguchetto.getInstance().agregarIngrediente(temporal);
+		Stock.getInstance().comprarIngrediente(temporal, ics.getStock());
+		return null;
+	}
+
 }
