@@ -23,6 +23,12 @@
             <input type="submit" value="agregar"/>
             <input type="reset"/>
         </form:form>
+        
+        <form:select path="nombre">
+			<c:forEach var="each" items="${sangucheto}">                
+				<form:option value="${each.nombre}" label="${each.nombre}"/> 
+			</c:forEach>
+        </form:select>
 
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 	<script src="js/jquery-1.11.3.min.js"></script>

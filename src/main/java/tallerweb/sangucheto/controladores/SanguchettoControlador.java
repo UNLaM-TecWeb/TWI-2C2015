@@ -71,10 +71,12 @@ public class SanguchettoControlador {
 	@RequestMapping("/agregarasangucheto")
 	public ModelAndView agregarASangucheto(@ModelAttribute("ingredienteConStock") IngredienteConStock ics) {		
 		Ingrediente temporal = new Ingrediente();
+		
 		temporal.setNombre(ics.getNombre());		
 		Sanguchetto.getInstance().agregarIngrediente(temporal);
 		Stock.getInstance().comprarIngrediente(temporal, ics.getStock());
-		return null;
+		
+		return new ModelAndView("redirect:cargarListaConIngredientes?accion=armatusangucheto");
 	}
 
 }
