@@ -19,13 +19,32 @@ public class Sanguchetto {
 		descuentos.add(descuento);
 	}
 	
-	public Double calcularMontoDescuento() {
-		/** @todo desarrollar este metodo. */
-		return null;
+	public Double calcularDescuentoFijo() {
+		Double montoTotal = 0.0;
+		
+		for (Descuento cadaElemento : descuentos)
+			if (cadaElemento.getTipo() == TipoDescuento.MONTO)
+				montoTotal += cadaElemento.getValor();
+
+		return montoTotal;
+	}
+	
+	public Double calcularDescuentoPorcentual() {
+		Double porcentajeTotal = 0.0;
+		
+		for (Descuento cadaElemento : descuentos)
+			if (cadaElemento.getTipo() == TipoDescuento.PORCENTAJE)
+				porcentajeTotal += cadaElemento.getValor();
+
+		return porcentajeTotal;
 	}
 	
 	public Double calcularPrecioConDescuento() {
-		/** @todo desarrollar este metodo. */ 
+		Double precioSinDescuento = this.getPrecio();
+		Double precioConDescuento = precioSinDescuento;
+		
+		precioConDescuento -= this.calcularDescuentoFijo();
+//		precioConDescuento *= 
 		return null;
 	}
 	
