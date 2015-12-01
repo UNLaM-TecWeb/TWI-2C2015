@@ -1,5 +1,5 @@
 # UNLaM-TallerWebI-Sanguchetto
-Trabajo Pr√°ctico final para la c√°tedra Taller Web I. Universidad Nacional de La Matanza.
+Trabajo Pr·ctico final para la c·tedra Taller Web I. Universidad Nacional de La Matanza.
 
 ---
 
@@ -8,9 +8,9 @@ Enunciado
 
 ### Funcionalidades a desarrollar:
 1. Una pantalla para que se agreguen productos al carrito.
-  + que se descuentan del stock.
+  ~~+ que se descuentan del stock.~~
   + que vaya mostrando el precio total del carrito a medida que se agregan cosas al mismo. 
-  + Adem√°s se puede agregar descuentos que pueden ser monto o porcentaje de descuento. 
+  + Adem·s se puede agregar descuentos que pueden ser monto o porcentaje de descuento. 
     1. En este caso la pantalla muestra el total con descuento.
     2. y el ahorro acumulado en el carrito. 
   + Esta pantalla tiene dos botones: 

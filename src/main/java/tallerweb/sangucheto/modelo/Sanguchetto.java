@@ -7,11 +7,26 @@ public class Sanguchetto {
 
 	private static Sanguchetto instance = new Sanguchetto();
 	private List<Ingrediente> ingredientes = new LinkedList<Ingrediente>();
+	private List<Descuento> descuentos = new LinkedList<Descuento>();
 	
 	private Sanguchetto(){}
 	
 	public static Sanguchetto getInstance(){
 		return instance;
+	}
+	
+	public void agregarDescuento(Descuento descuento) {
+		descuentos.add(descuento);
+	}
+	
+	public Double calcularMontoDescuento() {
+		/** @todo desarrollar este metodo. */
+		return null;
+	}
+	
+	public Double calcularPrecioConDescuento() {
+		/** @todo desarrollar este metodo. */ 
+		return null;
 	}
 	
 	/**

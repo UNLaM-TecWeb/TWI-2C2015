@@ -58,7 +58,7 @@ public class SanguchettoControlador {
 		else if (accion.equals("eliminarstock"))
 			mav = new ModelAndView("eliminarstock");
 		
-		else {// if (accion.equals("armatusangucheto"))
+		else { // if (accion.equals("armatusangucheto"))
 			mav = new ModelAndView("armatusangucheto");
 			mav.addObject("sangucheto", Sanguchetto.getInstance().verIngredientesYCondimentos());			
 		}

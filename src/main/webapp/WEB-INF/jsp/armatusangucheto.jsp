@@ -24,11 +24,13 @@
             <input type="reset"/>
         </form:form>
         
-        <form:select path="nombre">
-			<c:forEach var="each" items="${sangucheto}">                
-				<form:option value="${each.nombre}" label="${each.nombre}"/> 
-			</c:forEach>
-        </form:select>
+        <form:form method="post" action="agregarasangucheto" modelAttribute="ingredienteConStock">
+	        <form:select path="nombre">
+				<c:forEach var="each" items="${sangucheto}">                
+					<form:option value="${each.nombre}" label="${each.nombre}"/> 
+				</c:forEach>
+	        </form:select>
+        </form:form>
 
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 	<script src="js/jquery-1.11.3.min.js"></script>
