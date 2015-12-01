@@ -1,5 +1,5 @@
 # UNLaM-TallerWebI-Sanguchetto
-Trabajo Práctico final para la cátedra Taller Web I. Universidad Nacional de La Matanza.
+Trabajo PrÃ¡ctico final para la cÃ¡tedra Taller Web I. Universidad Nacional de La Matanza.
 
 ---
 
@@ -8,9 +8,9 @@ Enunciado
 
 ### Funcionalidades a desarrollar:
 1. Una pantalla para que se agreguen productos al carrito.
-  ~~+ que se descuentan del stock.~~
+  + ~~que se descuentan del stock.~~
   + que vaya mostrando el precio total del carrito a medida que se agregan cosas al mismo. 
-  + Además se puede agregar descuentos que pueden ser monto o porcentaje de descuento. 
+  + AdemÃ¡s se puede agregar descuentos que pueden ser monto o porcentaje de descuento. 
     1. En este caso la pantalla muestra el total con descuento.
     2. y el ahorro acumulado en el carrito. 
   + Esta pantalla tiene dos botones: 
@@ -27,7 +27,7 @@ Enunciado
 - la clase Stock completa y 
 - la clase Carrito con los metodos sin implementar, para completar por los alumnos.
 
-### _La metodología de trabajo es en grupos de 2 personas, sin excepción._
+### _La metodologÃ­a de trabajo es en grupos de 2 personas, sin excepciÃ³n._
 
 ### Anotaciones:
 - http://www.mkyong.com/spring-mvc/spring-mvc-how-to-include-js-or-css-files-in-a-jsp-page/
