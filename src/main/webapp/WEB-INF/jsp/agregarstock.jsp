@@ -15,17 +15,29 @@
 
 <body>
 	
-        <h1>AGREGAR STOCK</h1>
+        	<div class="row">
+		        <div class="col-md-2 col-md-offset-5">
+		        	<h2>AGREGAR STOCK</h2>
+		        </div>
+			</div>
+        
+<div class="container">
+        
         <form:form method="post" action="modificarStock?accion=agregar" modelAttribute="ingredienteConStock">
-            <form:select path="nombre">
-				<c:forEach var="each" items="${mapa}">                
-                	<form:option value="${each.key.nombre}" label="${each.key.nombre}, Stock: ${each.value}"/> 
-                </c:forEach>
-            </form:select>
-            <form:input path="stock"/>
+            <div class="col-sm-10">
+	            <form:select class="form-control" path="nombre">
+					<c:forEach var="each" items="${mapa}">                
+	                	<form:option value="${each.key.nombre}" label="${each.key.nombre}, Stock: ${each.value}"/> 
+	                </c:forEach>
+	            </form:select>
+            </div>
+            
+            <form:input placeholder="Ingrese stock" path="stock"/>
             <input type="submit"/>
         </form:form>
     
+    
+</div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src='<c:url value="/js/jquery-1.11.3.min.js" />' type="text/javascript"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->

@@ -15,7 +15,7 @@
 <body>
 	
     <h1>LISTA DE INGREDIENTES</h1>
-	<table border="1">
+	<table class="table table-bordered">
 		<tr>
 			<td>INGREDIENTE</td>
 			<td>PRECIO</td>

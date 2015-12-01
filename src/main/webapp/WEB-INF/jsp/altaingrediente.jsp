@@ -14,24 +14,55 @@
 </head>
 
 <body>
-	<h1>ALTA DE INGREDIENTE</h1>
-	<form:form method="post" action="crearIngrediente" modelAttribute="ingrediente">
-	    <p>Nombre</p>
-	    <form:input path="nombre"/>
-	        
-	    <p>Precio</p>
-	    <form:input path="precio"/>
-	        
-	    <p>Tipo</p>
-	    <form:select path="tipo">
-	        <form:option value="INGREDIENTE" label="Ingrediente"/>
-	        <form:option value="CONDIMENTO" label="Condimento"/>
-	    </form:select>
+			<div class="row">
+		        <div class="col-md-2 col-md-offset-5">
+		        	<h2>ALTA DE INGREDIENTE</h2>
+		        </div>
+			</div>
+
 	
-	    <input type="submit"/>
-	    <input type="reset"/>
-	</form:form>
-    
+	<div class="container">
+		<form:form class="form-horizontal" method="post" action="crearIngrediente" modelAttribute="ingrediente">
+		    <div class = "form-group">
+			    <label class="control-label col-sm-2" for="nombre">Nombre:</label>
+				  <div class="col-sm-10">
+	        			<form:input type="text" class="form-control" placeholder="Ingrese nombre" path="nombre"/>
+	      		  </div>
+		    </div>
+		    
+		    <div class = "form-group">
+			    <label class="control-label col-sm-2" for="nombre">Precio:</label>
+				  <div class="col-sm-10">
+	        			<form:input type="text" class="form-control" placeholder="Ingrese precio" path="precio"/>
+	      		  </div>
+		    </div>
+		        
+<!-- 		    <p>Precio</p> -->
+<%-- 		    <form:input path="precio"/> --%>
+		        
+<!-- 		    <p>Tipo</p> -->
+<%-- 		    <form:select path="tipo"> --%>
+<%-- 		        <form:option value="INGREDIENTE" label="Ingrediente"/> --%>
+<%-- 		        <form:option value="CONDIMENTO" label="Condimento"/> --%>
+<%-- 		    </form:select> --%>
+
+				<div class="form-group">
+			      <label class="control-label col-sm-2">Seleccione uno:</label>
+				      <div class="col-sm-10">
+					      <form:select class="form-control" path="tipo">
+						        <form:option value="INGREDIENTE" label="Ingrediente"/>
+						        <form:option value="CONDIMENTO" label="Condimento"/>
+						  
+						  </form:select>
+					   </div>
+				</div>
+		    
+			    <div class="col-md-2 col-md-offset-5">
+				    <input type="submit"/>
+				    <input type="reset"/>
+			    </div>
+		</form:form>
+    </div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src='<c:url value="/js/jquery-1.11.3.min.js" />' type="text/javascript"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
