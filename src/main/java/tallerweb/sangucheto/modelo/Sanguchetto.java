@@ -7,7 +7,7 @@ public class Sanguchetto {
 
 	private static Sanguchetto instance = new Sanguchetto();
 	private List<Ingrediente> ingredientes = new LinkedList<Ingrediente>();
-	private List<Descuento> descuentos = new LinkedList<Descuento>();
+//	private List<Descuento> descuentos = new LinkedList<Descuento>();
 	
 	private Sanguchetto(){}
 	
@@ -15,38 +15,33 @@ public class Sanguchetto {
 		return instance;
 	}
 	
-	public void agregarDescuento(Descuento descuento) {
-		descuentos.add(descuento);
-	}
-	
-	public Double calcularDescuentoFijo() {
-		Double montoTotal = 0.0;
-		
-		for (Descuento cadaElemento : descuentos)
-			if (cadaElemento.getTipo() == TipoDescuento.MONTO)
-				montoTotal += cadaElemento.getValor();
-
-		return montoTotal;
-	}
-	
-	public Double calcularDescuentoPorcentual() {
-		Double porcentajeTotal = 0.0;
-		
-		for (Descuento cadaElemento : descuentos)
-			if (cadaElemento.getTipo() == TipoDescuento.PORCENTAJE)
-				porcentajeTotal += cadaElemento.getValor();
-
-		return porcentajeTotal;
-	}
-	
-	public Double calcularPrecioConDescuento() {
-		Double precioSinDescuento = this.getPrecio();
-		Double precioConDescuento = precioSinDescuento;
-		
-		precioConDescuento -= this.calcularDescuentoFijo();
-//		precioConDescuento *= 
-		return null;
-	}
+//	public void agregarDescuento(Descuento descuento) {
+//		descuentos.add(descuento);
+//	}
+//	
+//	public Double calcularDescuentoFijo() {
+//		Double montoTotal = 0.0;
+//		
+//		for (Descuento cadaElemento : descuentos)
+//			if (cadaElemento.getTipo() == TipoDescuento.MONTO)
+//				montoTotal += cadaElemento.getValor();
+//
+//		return montoTotal;
+//	}
+//	
+//	public Double calcularDescuentoPorcentual() {
+//		Double porcentajeTotal = 0.0;
+//		
+//		for (Descuento cadaElemento : descuentos)
+//			if (cadaElemento.getTipo() == TipoDescuento.PORCENTAJE)
+//				porcentajeTotal += cadaElemento.getValor();
+//
+//		return porcentajeTotal;
+//	}
+//	
+//	public Double calcularPrecioConDescuento() {
+//		return null;
+//	}
 	
 	/**
 	 * Elimina todos los ingredientes del sanguchetto.<br>

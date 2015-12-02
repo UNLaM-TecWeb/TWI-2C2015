@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import tallerweb.sangucheto.modelo.Descuento;
 import tallerweb.sangucheto.modelo.Ingrediente;
 import tallerweb.sangucheto.modelo.IngredienteConStock;
 import tallerweb.sangucheto.modelo.Sanguchetto;
@@ -61,6 +62,7 @@ public class SanguchettoControlador {
 		else { // if (accion.equals("armatusangucheto"))
 			mav = new ModelAndView("armatusangucheto");
 			mav.addObject("sangucheto", Sanguchetto.getInstance().verIngredientesYCondimentos());			
+			mav.addObject("descuento", new Descuento());
 		}
 		
 		mav.addObject("mapa", Stock.getInstance().obtenerStock());
@@ -69,7 +71,8 @@ public class SanguchettoControlador {
 	}
 
 	@RequestMapping("/agregarasangucheto")
-	public ModelAndView agregarASangucheto(@ModelAttribute("ingredienteConStock") IngredienteConStock ics) {		
+	public ModelAndView agregarASangucheto(	@ModelAttribute("ingredienteConStock") IngredienteConStock ics,
+											@ModelAttribute("descuento") Descuento descuento) {		
 		Ingrediente temporal = new Ingrediente();
 		
 		temporal.setNombre(ics.getNombre());		
