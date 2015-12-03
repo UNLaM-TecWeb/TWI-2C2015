@@ -7,12 +7,18 @@ public class Descuento {
 	Double valorFijo;
 	Double valorPorcentual;
 	
-	public Descuento() {}
-	
-	public Descuento(Double valorFijo, Double valorPorcentual) {
-		this.valorFijo = valorFijo;
-		this.valorPorcentual = valorPorcentual;
+	public Descuento() {
+		this.precioSanguchetoSinDescuento = 0.0;
+		this.precioSanguchetoConDescuento = 0.0;
+		this.ahorro = 0.0;
+		this.valorFijo = 0.0;
+		this.valorPorcentual = 0.0;
 	}
+	
+//	public Descuento(Double valorFijo, Double valorPorcentual) {
+//		this.valorFijo = valorFijo;
+//		this.valorPorcentual = valorPorcentual;
+//	}
 
 	public Double calcularDescuento() {
 		precioSanguchetoConDescuento = precioSanguchetoSinDescuento - valorFijo;

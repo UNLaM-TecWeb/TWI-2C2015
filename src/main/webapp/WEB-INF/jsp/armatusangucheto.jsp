@@ -37,17 +37,17 @@
 	        </form:select>
         </form:form>
         
-        <form:form method="post" action="agregarasangucheto" modelAttribute="descuento">
-	        <h3>Descuentos:</h3>
-	        <p>Monto fijo</p> <form:input path="valorFijo"/>
-	        <p>Monto porcentual</p> <form:input path="valorPorcentual"/>
+<%--         <form:form method="post" action="agregarasangucheto" modelAttribute="descuento"> --%>
+<!-- 	        <h3>Descuentos:</h3> -->
+<%-- 	        <p>Monto fijo</p> <form:input path="valorFijo"/> --%>
+<%-- 	        <p>Monto porcentual</p> <form:input path="valorPorcentual"/> --%>
 	        
-	        <p>Costo del sangucheto: ${descuento.precioSanguchetoSinDescuento}</p>
-	        <p>Costo con descuento del sangucheto: ${descuento.precioSanguchetoConDescuento}</p>
-	        <p>Estas ahorrando:</p>
-			<input type="submit" value="Aplicar descuento"/>
-            <input type="reset"/>   
-        </form:form>
+<%-- 	        <p>Costo del sangucheto: ${descuento.precioSanguchetoConDescuento}</p> --%>
+<%-- 	        <p>Costo con descuento del sangucheto: ${descuento.precioSanguchetoConDescuento}</p> --%>
+<!-- 	        <p>Estas ahorrando:</p> -->
+<!-- 			<input type="submit" value="Aplicar descuento"/> -->
+<!--             <input type="reset"/>    -->
+<%--         </form:form> --%>
         
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 	<script src="js/jquery-1.11.3.min.js"></script>

@@ -74,12 +74,16 @@ public class SanguchettoControlador {
 	public ModelAndView agregarASangucheto(	@ModelAttribute("ingredienteConStock") IngredienteConStock ics,
 											@ModelAttribute("descuento") Descuento descuento) {		
 		Ingrediente temporal = new Ingrediente();
+		temporal.setNombre(ics.getNombre());
 		
-		temporal.setNombre(ics.getNombre());		
-		Sanguchetto.getInstance().agregarIngrediente(temporal);
+		for (int i = 0; i < ics.getStock(); i++)
+			Sanguchetto.getInstance().agregarIngrediente(temporal);
 		Stock.getInstance().comprarIngrediente(temporal, ics.getStock());
+
+		ModelAndView mav = new ModelAndView("redirect:cargarListaConIngredientes?accion=armatusangucheto");
+		mav.addObject("descuento", descuento);
 		
-		return new ModelAndView("redirect:cargarListaConIngredientes?accion=armatusangucheto");
+		return mav;
 	}
 
 }
