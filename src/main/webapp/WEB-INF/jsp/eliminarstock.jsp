@@ -3,17 +3,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Sangucheto&#58; Alta de ingrediente</title>
-    <!-- Bootstrap -->
-    <link href='<c:url value="/css/bootstrap-theme.min.css" />' type="text/css" rel="stylesheet" media="screen">
-    <link href='<c:url value="/css/bootstrap.min.css" />' type="text/css" rel="stylesheet" media="screen">
+    	<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+    <title>Sangucheto&#58; Baja de ingrediente</title>
+    
 </head>
 
 <body>
+	<nav class="navbar navbar-inverse" style="background-color: green">
+		<a class="navbar-brand" href="/sangucheto">Sangucheto</a>
+		<div>
+			<ul class="nav navbar-nav">
+		        <li class="nav-item"><a href="cargarListaConIngredientes?accion=armatusangucheto">Arma tu Sangucheto</a></li>
+		        <li class="nav-item"><a href="listaIngredientes">Listar Ingredientes</a></li>
+		        <li class="nav-item"><a href="altaIngrediente">Alta de Ingredientes</a></li> 
+		        <li class="nav-item"><a href="cargarListaConIngredientes?accion=agregarstock">Agregar stock a ingredientes</a></li> 
+		        <li class="nav-item"><a href="cargarListaConIngredientes?accion=eliminarstock">Quitar stock a ingrediente</a></li> 
+		    </ul>
+	   	</div>
+	</nav>
 	
        <div class="row">
 		        <div class="col-md-2 col-md-offset-5">
@@ -31,9 +41,13 @@
 	                </c:forEach>
 	            </form:select>
             </div>
-            
-            <form:input placeholder="Ingrese stock" path="stock"/>
-            <input type="submit"/>
+            <br>
+            <br>
+            <div class="col-sm-10">
+	            <form:input class="form-control" placeholder="Ingrese stock a eliminar" path="stock"/>
+	            <br>
+	            <input class="btn btn-warning" type="submit"/>
+            </div>
         </form:form>
     
     

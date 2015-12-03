@@ -3,17 +3,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    	<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="css/bootstrap.min.css" rel="stylesheet">
     <title>Sangucheto&#58; Alta de ingrediente</title>
-    <!-- Bootstrap -->
-    <link href='<c:url value="/css/bootstrap-theme.min.css" />' type="text/css" rel="stylesheet" media="screen">
-    <link href='<c:url value="/css/bootstrap.min.css" />' type="text/css" rel="stylesheet" media="screen">
+    
 </head>
 
 <body>
+	<nav class="navbar navbar-inverse" style="background-color: green">
+		<a class="navbar-brand" href="/sangucheto">Sangucheto</a>
+		<div>
+			<ul class="nav navbar-nav">
+		        <li class="nav-item"><a href="cargarListaConIngredientes?accion=armatusangucheto">Arma tu Sangucheto</a></li>
+		        <li class="nav-item"><a href="listaIngredientes">Listar Ingredientes</a></li>
+		        <li class="nav-item"><a href="altaIngrediente">Alta de Ingredientes</a></li> 
+		        <li class="nav-item"><a href="cargarListaConIngredientes?accion=agregarstock">Agregar stock a ingredientes</a></li> 
+		        <li class="nav-item"><a href="cargarListaConIngredientes?accion=eliminarstock">Quitar stock a ingrediente</a></li> 
+		    </ul>
+	   	</div>
+	</nav>
 			<div class="row">
 		        <div class="col-md-2 col-md-offset-5">
 		        	<h2>ALTA DE INGREDIENTE</h2>
@@ -31,7 +41,7 @@
 		    </div>
 		    
 		    <div class = "form-group">
-			    <label class="control-label col-sm-2" for="nombre">Precio:</label>
+			    <label class="control-label col-sm-2" for="precio">Precio:</label>
 				  <div class="col-sm-10">
 	        			<form:input type="text" class="form-control" placeholder="Ingrese precio" path="precio"/>
 	      		  </div>
@@ -57,9 +67,10 @@
 					   </div>
 				</div>
 		    
-			    <div class="col-md-2 col-md-offset-5">
-				    <input type="submit"/>
-				    <input type="reset"/>
+			    
+			    <div class="col-md-4 col-md-offset-5">
+				    <input class="btn btn-primary" type="submit"/>
+				    <input class="btn btn-warning" type="reset"/>
 			    </div>
 		</form:form>
     </div>
