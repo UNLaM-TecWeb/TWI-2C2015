@@ -71,8 +71,7 @@ public class SanguchettoControlador {
 	}
 
 	@RequestMapping("/agregarasangucheto")
-	public ModelAndView agregarASangucheto(	@ModelAttribute("ingredienteConStock") IngredienteConStock ics,
-											@ModelAttribute("descuento") Descuento descuento) {		
+	public ModelAndView agregarASangucheto(	@ModelAttribute("ingredienteConStock") IngredienteConStock ics) {		
 		Ingrediente temporal = new Ingrediente();
 		temporal.setNombre(ics.getNombre());
 		
@@ -80,10 +79,21 @@ public class SanguchettoControlador {
 			Sanguchetto.getInstance().agregarIngrediente(temporal);
 		Stock.getInstance().comprarIngrediente(temporal, ics.getStock());
 
-		ModelAndView mav = new ModelAndView("redirect:cargarListaConIngredientes?accion=armatusangucheto");
-		mav.addObject("descuento", descuento);
+//		ModelAndView mav = new ModelAndView("redirect:cargarListaConIngredientes?accion=armatusangucheto");
+//		mav.addObject("descuento", descuento);
 		
-		return mav;
+		return new ModelAndView("redirect:cargarListaConIngredientes?accion=armatusangucheto");
 	}
 
+	@RequestMapping("/calcularDescuento")
+	public ModelAndView calcularDescuento(@ModelAttribute("descuento") Descuento descuento) {
+		
+		descuento.setPrecioSanguchetoSinDescuento(Sanguchetto.getInstance().getPrecio());
+		descuento.calcularDescuento();
+		descuento.calcularAhorro();
+		
+		ModelAndView mav = new ModelAndView("redirect:cargarListaConIngredientes?accion=armatusangucheto");
+		mav.addObject("descuento", descuento);
+		return mav;
+	}
 }
