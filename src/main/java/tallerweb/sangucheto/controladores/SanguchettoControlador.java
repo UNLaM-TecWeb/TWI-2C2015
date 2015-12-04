@@ -93,6 +93,7 @@ public class SanguchettoControlador {
 		mav = new ModelAndView("armatusangucheto");
 		mav.addObject("ingredienteConStock", new IngredienteConStock());
 		mav.addObject("sangucheto", Sanguchetto.getInstance().verIngredientesYCondimentos());	
+		ModelAndView mav = new ModelAndView("redirect:cargarListaConIngredientes?accion=armatusangucheto");
 		mav.addObject("descuento", descuento);
 		return mav;
 	}

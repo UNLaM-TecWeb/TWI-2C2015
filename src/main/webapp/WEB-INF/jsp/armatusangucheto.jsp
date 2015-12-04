@@ -90,6 +90,9 @@
 	        <p>Costo del sangucheto: ${descuento.precioSanguchetoSinDescuento}</p>
 	        <p>Costo con descuento del sangucheto: ${descuento.precioSanguchetoConDescuento}</p>
 	        <p>Estas ahorrando: ${descuento.ahorro}</p>
+	        <p>Costo del sangucheto: ${descuento.precioSanguchetoConDescuento}</p>
+	        <p>Costo con descuento del sangucheto: ${descuento.precioSanguchetoConDescuento}</p>
+	        <p>Estas ahorrando:</p>
 			<input type="submit" value="Aplicar descuento"/>
             <input type="reset"/>   
         </form:form>
