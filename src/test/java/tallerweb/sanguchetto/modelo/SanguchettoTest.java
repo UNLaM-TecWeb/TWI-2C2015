@@ -11,58 +11,72 @@ import tallerweb.sangucheto.modelo.TipoIngrediente;
 
 public class SanguchettoTest {
 
-	private Sanguchetto s = Sanguchetto.getInstance();
-	/*
-	 * Por mas que defina Sanguchetto s dentro de cada Test su atributos son globales a todos los test, por lo tanto si agregaba lechuga
-	 * en un metodo y tomate en otro metod, veia lechuga y tomate en un tercer metodo. O sea, las modificaciones al objeto s persisten
-	 * entre los distintos casos de prueba.
-	 * Es por los motivos mencionados que decidí definir Sanguchetto s de forma global dentro de la clase.
-	 * 
-	 * */
-	
-	
     @Test
     public void testVaciar() {
-        s.agregarIngrediente(new Ingrediente("lechuga", 0.5, TipoIngrediente.INGREDIENTE));
-        s.agregarIngrediente(new Ingrediente("tomate", 0.3, TipoIngrediente.INGREDIENTE));
-        s.agregarIngrediente(new Ingrediente("jamon", 0.8, TipoIngrediente.INGREDIENTE));
-        s.agregarIngrediente(new Ingrediente("mayonesa", 0.4, TipoIngrediente.CONDIMENTO));
-        
-        s.vaciar();
-        Assert.assertTrue(s.verCondimentos().isEmpty());
+    	Sanguchetto.getInstance().agregarIngrediente(new Ingrediente("lechuga", 0.5, TipoIngrediente.INGREDIENTE));
+    	Sanguchetto.getInstance().agregarIngrediente(new Ingrediente("tomate", 0.3, TipoIngrediente.INGREDIENTE));
+    	Sanguchetto.getInstance().agregarIngrediente(new Ingrediente("jamon", 0.8, TipoIngrediente.INGREDIENTE));
+    	Sanguchetto.getInstance().agregarIngrediente(new Ingrediente("mayonesa", 0.4, TipoIngrediente.CONDIMENTO));
+    	
+    	Sanguchetto.getInstance().vaciar();
+        Assert.assertTrue(Sanguchetto.getInstance().verCondimentos().isEmpty());
     }
 
     @Test
     public void testAgregarIngrediente() {
-        s.agregarIngrediente(new Ingrediente("lechuga", 0.5, TipoIngrediente.INGREDIENTE));
-        s.agregarIngrediente(new Ingrediente("tomate", 0.3, TipoIngrediente.INGREDIENTE));
-        s.agregarIngrediente(new Ingrediente("jamon", 0.8, TipoIngrediente.INGREDIENTE));
-        s.agregarIngrediente(new Ingrediente("mayonesa", 0.4, TipoIngrediente.CONDIMENTO));
-        s.agregarIngrediente(new Ingrediente("sal", 0.1, TipoIngrediente.CONDIMENTO));
+    	Sanguchetto.getInstance().agregarIngrediente(new Ingrediente("lechuga", 0.5, TipoIngrediente.INGREDIENTE));
+    	Sanguchetto.getInstance().agregarIngrediente(new Ingrediente("tomate", 0.3, TipoIngrediente.INGREDIENTE));
+    	Sanguchetto.getInstance().agregarIngrediente(new Ingrediente("jamon", 0.8, TipoIngrediente.INGREDIENTE));
+    	Sanguchetto.getInstance().agregarIngrediente(new Ingrediente("mayonesa", 0.4, TipoIngrediente.CONDIMENTO));
+    	Sanguchetto.getInstance().agregarIngrediente(new Ingrediente("sal", 0.1, TipoIngrediente.CONDIMENTO));
         
-        Assert.assertFalse(s.verCondimentos().isEmpty());        
+        Assert.assertFalse(Sanguchetto.getInstance().verCondimentos().isEmpty()); 
+        Sanguchetto.getInstance().vaciar();
     }
 
     @Test
     public void testVerIngredientes() {
+    	Sanguchetto.getInstance().agregarIngrediente(new Ingrediente("lechuga", 0.5, TipoIngrediente.INGREDIENTE));
+    	Sanguchetto.getInstance().agregarIngrediente(new Ingrediente("tomate", 0.3, TipoIngrediente.INGREDIENTE));
+    	Sanguchetto.getInstance().agregarIngrediente(new Ingrediente("jamon", 0.8, TipoIngrediente.INGREDIENTE));
+    	Sanguchetto.getInstance().agregarIngrediente(new Ingrediente("mayonesa", 0.4, TipoIngrediente.CONDIMENTO));
+    	Sanguchetto.getInstance().agregarIngrediente(new Ingrediente("sal", 0.1, TipoIngrediente.CONDIMENTO));
+    	
         List<Ingrediente> listaDeIngredientes;
-        listaDeIngredientes = s.verIngredientes();
+        listaDeIngredientes = Sanguchetto.getInstance().verIngredientes();
         
         for (Ingrediente cadaIngrediente : listaDeIngredientes)
-        	Assert.assertTrue(cadaIngrediente.getTipo() == TipoIngrediente.INGREDIENTE);      	
+        	Assert.assertTrue(cadaIngrediente.getTipo() == TipoIngrediente.INGREDIENTE);  
+        
+        Sanguchetto.getInstance().vaciar();
     }
 
     @Test
     public void testVerCondimentos() {
+    	Sanguchetto.getInstance().agregarIngrediente(new Ingrediente("lechuga", 0.5, TipoIngrediente.INGREDIENTE));
+    	Sanguchetto.getInstance().agregarIngrediente(new Ingrediente("tomate", 0.3, TipoIngrediente.INGREDIENTE));
+    	Sanguchetto.getInstance().agregarIngrediente(new Ingrediente("jamon", 0.8, TipoIngrediente.INGREDIENTE));
+    	Sanguchetto.getInstance().agregarIngrediente(new Ingrediente("mayonesa", 0.4, TipoIngrediente.CONDIMENTO));
+    	Sanguchetto.getInstance().agregarIngrediente(new Ingrediente("sal", 0.1, TipoIngrediente.CONDIMENTO));
+    	
         List<Ingrediente> listaDeCondimentos;
-        listaDeCondimentos = s.verIngredientes();
+        listaDeCondimentos = Sanguchetto.getInstance().verCondimentos();
         
-        for (Ingrediente cadaIngrediente : listaDeCondimentos)
-        	Assert.assertTrue(cadaIngrediente.getTipo() == TipoIngrediente.INGREDIENTE);
+        for (Ingrediente cadaCondimento : listaDeCondimentos)
+        	Assert.assertTrue(cadaCondimento.getTipo() == TipoIngrediente.CONDIMENTO);
+        
+        Sanguchetto.getInstance().vaciar();
     }
 
     @Test
     public void testGetPrecio() {
-        Assert.assertTrue(2.1 == s.getPrecio());
+    	Sanguchetto.getInstance().agregarIngrediente(new Ingrediente("lechuga", 0.5, TipoIngrediente.INGREDIENTE));
+    	Sanguchetto.getInstance().agregarIngrediente(new Ingrediente("tomate", 0.5, TipoIngrediente.INGREDIENTE));
+    	Sanguchetto.getInstance().agregarIngrediente(new Ingrediente("jamon", 0.8, TipoIngrediente.INGREDIENTE));
+    	Sanguchetto.getInstance().agregarIngrediente(new Ingrediente("mayonesa", 0.5, TipoIngrediente.CONDIMENTO));
+    	Sanguchetto.getInstance().agregarIngrediente(new Ingrediente("sal", 0.2, TipoIngrediente.CONDIMENTO));
+        
+    	Assert.assertTrue(2.5 == Sanguchetto.getInstance().getPrecio());
+    	Sanguchetto.getInstance().vaciar();
     }
 }

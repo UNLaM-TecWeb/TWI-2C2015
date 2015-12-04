@@ -1,5 +1,5 @@
 # UNLaM-TallerWebI-Sanguchetto
-Trabajo PrÃ¡ctico final para la cÃ¡tedra Taller Web I. Universidad Nacional de La Matanza.
+Trabajo Práctico final para la cátedra Taller Web I. Universidad Nacional de La Matanza.
 
 ---
 
@@ -22,12 +22,20 @@ Enunciado
 5. ~~Una pantalla para eliminar el stock de un producto.~~
 6. ~~Implementar los test cases de la clase Carrito, se provee la clase con metodos sin implementar.~~
 
+### Correcciones para entregar en el final:
+- Validar que no se consuma más stock del que disponemos.
+- ~~Arreglar los test case.~~
+- Modificar la implementación de la clase Descuento para que esta sea una lista dentro de Sangucheto.
+- Implementar la baja de ingredientes.
+- Implementar el botón que deshace el sangucheto.
+- Implementar la pagina "gracias por comprar".
+
 ### Se provee:
 
 - la clase Stock completa y 
 - la clase Carrito con los metodos sin implementar, para completar por los alumnos.
 
-### _La metodologÃ­a de trabajo es en grupos de 2 personas, sin excepciÃ³n._
+### _La metodología de trabajo es en grupos de 2 personas, sin excepción._
 
 ### Anotaciones:
 - http://www.mkyong.com/spring-mvc/spring-mvc-how-to-include-js-or-css-files-in-a-jsp-page/
