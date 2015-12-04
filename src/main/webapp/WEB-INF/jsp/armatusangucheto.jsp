@@ -34,6 +34,7 @@
  <div class="container">
 			
 		<div class = "form-group">
+<!-- 		esto es el menu de ingredientes para agregar a sangucheto -->
 			<form:form class="form-horizontal" method="post" action="agregarasangucheto" modelAttribute="ingredienteConStock">
 	            <h1>Eleg&iacute; tus ingredientes favoritos.</h1>
 	         
@@ -66,6 +67,7 @@
         </form:form>
         
         
+<!--         Esto solo muestra el contenido del sangucheto -->
 	        <form:form class="form-horizontal" method="post" action="agregarasangucheto" modelAttribute="ingredienteConStock">
 	        	<h2>Mir&aacute; como esta quedando tu sangucheto:</h2>
 		        
@@ -85,9 +87,9 @@
 	        <p>Monto fijo</p> <form:input path="valorFijo"/>
 	        <p>Monto porcentual</p> <form:input path="valorPorcentual"/>
 	        
-	        <p>Costo del sangucheto: ${descuento.precioSanguchetoConDescuento}</p>
+	        <p>Costo del sangucheto: ${descuento.precioSanguchetoSinDescuento}</p>
 	        <p>Costo con descuento del sangucheto: ${descuento.precioSanguchetoConDescuento}</p>
-	        <p>Estas ahorrando:</p>
+	        <p>Estas ahorrando: ${descuento.ahorro}</p>
 			<input type="submit" value="Aplicar descuento"/>
             <input type="reset"/>   
         </form:form>

@@ -77,7 +77,7 @@ public class Stock {
 	 * @return
 	 */
 	public Integer obtenerStockDisponible(Ingrediente ingrediente){
-		if(!this.stock.containsKey(ingrediente)){
+		if(!this.stock.containsKey(ingrediente)) {
 			return null;
 		}
 		return this.stock.get(ingrediente);
@@ -118,5 +118,14 @@ public class Stock {
 		}
 		this.stock.remove(ingrediente);
 		return true;
+	}
+	
+	public Ingrediente obtenerIngredientePorNombre(String nombreIngrediente) {
+		Ingrediente ingrediente = new Ingrediente(nombreIngrediente, 0.0, TipoIngrediente.INGREDIENTE);
+		for (Ingrediente cadaElemento : this.stock.keySet())
+			if (cadaElemento.equals(ingrediente))
+				return cadaElemento;
+		
+		return null;
 	}
 }

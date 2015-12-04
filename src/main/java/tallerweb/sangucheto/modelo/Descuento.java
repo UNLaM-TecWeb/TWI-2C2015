@@ -1,25 +1,20 @@
 package tallerweb.sangucheto.modelo;
 
 public class Descuento {
-	Double precioSanguchetoSinDescuento;
-	Double precioSanguchetoConDescuento;
-	Double ahorro;
-	Double valorFijo;
-	Double valorPorcentual;
+	private Double precioSanguchetoSinDescuento;
+	private Double precioSanguchetoConDescuento;
+	private Double ahorro;
+	private Double valorFijo;
+	private Double valorPorcentual;
 	
 	public Descuento() {
-		this.precioSanguchetoSinDescuento = 0.0;
-		this.precioSanguchetoConDescuento = 0.0;
-		this.ahorro = 0.0;
-		this.valorFijo = 0.0;
-		this.valorPorcentual = 0.0;
+		this.precioSanguchetoSinDescuento = new Double(0.0);
+		this.precioSanguchetoConDescuento = new Double(0.0);
+		this.ahorro = new Double(0.0);
+		this.valorFijo = new Double(0.0);
+		this.valorPorcentual = new Double(0.0);
 	}
 	
-//	public Descuento(Double valorFijo, Double valorPorcentual) {
-//		this.valorFijo = valorFijo;
-//		this.valorPorcentual = valorPorcentual;
-//	}
-
 	public Double calcularDescuento() {
 		precioSanguchetoConDescuento = precioSanguchetoSinDescuento - valorFijo;
 		precioSanguchetoConDescuento = precioSanguchetoConDescuento * (1 - (valorPorcentual / 100));
@@ -47,6 +42,14 @@ public class Descuento {
 		this.precioSanguchetoConDescuento = precioSanguchetoConDescuento;
 	}
 
+	public Double getAhorro() {
+		return ahorro;
+	}
+
+	public void setAhorro(Double ahorro) {
+		this.ahorro = ahorro;
+	}
+
 	public Double getValorFijo() {
 		return valorFijo;
 	}
@@ -62,8 +65,4 @@ public class Descuento {
 	public void setValorPorcentual(Double valorPorcentual) {
 		this.valorPorcentual = valorPorcentual;
 	}
-
-
-
-
 }
