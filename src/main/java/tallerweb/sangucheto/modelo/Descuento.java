@@ -27,8 +27,7 @@ public class Descuento {
 	}
 	
 	public Double calcularAhorro() {
-		ahorro = precioSanguchetoSinDescuento - precioSanguchetoConDescuento;
-		return ahorro;
+		return precioSanguchetoSinDescuento - precioSanguchetoConDescuento;
 	}
 	
 	public Double getPrecioSanguchetoSinDescuento() {
