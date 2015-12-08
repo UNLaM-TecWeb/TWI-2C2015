@@ -24,7 +24,6 @@
 		        <li class="nav-item"><a href="altaIngrediente">Alta de Ingredientes</a></li> 
 		        <li class="nav-item"><a href="cargarListaConIngredientes?accion=agregarstock">Agregar stock a ingredientes</a></li> 
 		        <li class="nav-item"><a href="cargarListaConIngredientes?accion=eliminarstock">Quitar stock a ingrediente</a></li> 
-		        <li class="nav-item"><a href="eliminaringrediente">Eliminar ingrediente</a></li>
 		    </ul>
 	   	</div>
 	</nav>
