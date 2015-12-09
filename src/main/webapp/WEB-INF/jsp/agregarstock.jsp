@@ -2,30 +2,37 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
-<head>
+
      <head>
         <meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link href="css/bootstrap.min.css" rel="stylesheet">
-    	<title>Sangucheto&#58; Alta de ingrediente</title>
+		<link href='<c:url value="/css/bootstrap-theme.min.css"/>' type="text/css" rel="stylesheet" media="screen">
+        <link href='<c:url value="/css/bootstrap.min.css"/>' type="text/css" rel="stylesheet" media="screen">
+        <link href='<c:url value="/css/estilos.css"/>' type="text/css" rel="stylesheet" media="screen">
+        <title>Sanguchetto S.A.</title>
     </head>
-</head>
+
 
 <body>
-	<nav class="navbar navbar-inverse" style="background-color: green">
-		<a class="navbar-brand" href="/sangucheto">Sangucheto</a>
-		<div>
-			<ul class="nav navbar-nav">
-		        <li class="nav-item"><a href="cargarListaConIngredientes?accion=armatusangucheto">Arma tu Sangucheto</a></li>
-		        <li class="nav-item"><a href="listaIngredientes">Listar Ingredientes</a></li>
-		        <li class="nav-item"><a href="altaIngrediente">Alta de Ingredientes</a></li> 
-		        <li class="nav-item"><a href="cargarListaConIngredientes?accion=agregarstock">Agregar stock a ingredientes</a></li> 
-		        <li class="nav-item"><a href="cargarListaConIngredientes?accion=eliminarstock">Quitar stock a ingrediente</a></li> 
-		        <li class="nav-item"><a href="eliminaringrediente">Eliminar ingrediente</a></li>
-		    </ul>
-	   	</div>
-	</nav>
+	<div class="container">
+            <div class="row">
+                <div class="col-md-12 at_header">
+                     <p><a href="/sangucheto">SANGUCHETO</a></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2 at_navbar_btn"><a href="cargarListaConIngredientes?accion=armatusangucheto">Arma tu<br>sangucheto</a></div>
+                <div class="col-md-2 at_navbar_btn"><a href="listaIngredientes">Listar<br>ingredientes</a></div>
+                <div class="col-md-2 at_navbar_btn"><a href="altaIngrediente">Alta de<br>ingredientes</a></div>
+                <div class="col-md-2 at_navbar_btn"><a href="eliminaringrediente">Baja de<br>ingredientes</a></div>
+                <div class="col-md-2 at_navbar_btn"><a href="cargarListaConIngredientes?accion=agregarstock">Agregar stock<br>a ingrediente</a></div>
+                <div class="col-md-2 at_navbar_btn"><a href="cargarListaConIngredientes?accion=eliminarstock">Quitar stock<br>a ingrediente</a></div>
+            </div>
+          
+            <div class="row">
+                <div class="col-md-12 at_separator"></div>
+            </div>
 	
         	<div class="row">
 		        <div class="col-md-2 col-md-offset-5">
@@ -33,7 +40,7 @@
 		        </div>
 			</div>
         
-<div class="container">
+<!-- <div class="container"> -->
         
         <form:form method="post" action="modificarStock?accion=agregar" modelAttribute="ingredienteConStock">
             <div class="col-sm-10">
@@ -55,7 +62,9 @@
         </form:form>
     
     
-</div>
+<!-- </div> -->
+
+</div> <!-- Cierra container --> 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src='<c:url value="/js/jquery-1.11.3.min.js" />' type="text/javascript"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->

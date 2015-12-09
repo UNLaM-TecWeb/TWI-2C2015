@@ -9,135 +9,22 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link href='<c:url value="/css/bootstrap-theme.min.css"/>' type="text/css" rel="stylesheet" media="screen">
         <link href='<c:url value="/css/bootstrap.min.css"/>' type="text/css" rel="stylesheet" media="screen">
+        <link href='<c:url value="/css/estilos.css"/>' type="text/css" rel="stylesheet" media="screen">
         <title>Sanguchetto S.A.</title>
-        <style>
-            .container {
-                background-color: #00543f;
-            }
-            
-            .at_header {
-                background-color: #00543f;
-                height: 150px;
-                display: flex;
-                justify-content: center; /* align horizontal */
-                align-items: center; /* align vertical */
-                color: yellow;
-                text-shadow: 5px 5px #000;
-                font-family: sans-serif, monospace;
-                font-weight: 600;
-                font-size: 3.5em;
-            }
-            
-            .at_navbar_btn {
-                float: left;
-                background-color: #00543f;
-                height: 50px;
-                display: flex;
-                justify-content: center; /* align horizontal */
-                align-items: center; /* align vertical */
-                color: white;
-                font-family: sans-serif, monospace;
-                font-weight: 600;
-                font-size: 1em;
-                text-align: center;
-            }
-            
-            .at_list_header {
-                float: left;
-                background-color: #e6e6e6;
-                height: 50px;
-                display: flex;
-                justify-content: center; /* align horizontal */
-                align-items: center; /* align vertical */
-                color: black;
-                font-family: sans-serif, monospace;
-                font-weight: 600;
-                font-size: 1em;
-                text-align: center;
-            }
-            
-            .at_list_item {
-                float: left;
-                background-color: #e6e6e6;
-                height: 50px;
-                display: flex;
-                justify-content: center; /* align horizontal */
-                align-items: center; /* align vertical */
-                color: black;
-                font-family: sans-serif, monospace;
-                font-weight: 500;
-                font-size: 1em;
-                text-align: center;
-            }
-            
-            .at_page_header {
-                background-color: #fff;
-                height: 75px;
-                display: flex;
-                justify-content: center; /* align horizontal */
-                align-items: center; /* align vertical */
-                color: black;
-                font-family: sans-serif, monospace;
-                font-weight: 500;
-                font-size: 2.5em;
-            }
-            
-            .at_off_box_title {
-                font-size: 1.3em;
-                font-weight: 600;
-            }
-            
-            .at_off_box_background {background-color: white;}
-            
-            .at_off_box {
-                background-color: darkcyan;
-                font-family: sans-serif, monospace;
-                color: white;
-                font-weight: 500;
-                font-size: 1em;
-                border-radius: .5em;
-            }
-            
-            .at_off_box div {
-                float: left;
-                padding: 0.1em;
-                margin: 0.1em;
-            }
-            
-            .at_separator {
-                background-color: white; 
-                height: 5px;
-            }
-            
-            .at_sangucheto_box {
-                background-color: cornflowerblue;
-                font-family: sans-serif, monospace;
-                color: white;
-                font-weight: 500;
-                font-size: 1em;
-                border-radius: .5em;
-                margin-left: .5em;
-            }
-            
-			a:link {color: white;} 		                    /* unvisited link 	*/
-			a:visited {color: white;} 	                    /* visited link 	*/
-			a:hover {color: yellow;text-decoration: none} 	/* mouse over link 	*/
-			a:active {color: white;}	                    /* selected link 	*/
-        </style>
     </head>
     <body>
 
         <div class="container">
             <div class="row">
                 <div class="col-md-12 at_header">
-                    <p>SANGUCHETO</p>
+                   <p><a href="/sangucheto">SANGUCHETO</a></p>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-2 at_navbar_btn"><a href="cargarListaConIngredientes?accion=armatusangucheto">Arma tu<br>sangucheto</a></div>
                 <div class="col-md-2 at_navbar_btn"><a href="listaIngredientes">Listar<br>ingredientes</a></div>
                 <div class="col-md-2 at_navbar_btn"><a href="altaIngrediente">Alta de<br>ingredientes</a></div>
-                <div class="col-md-2 at_navbar_btn"><a href="">Baja de<br>ingredientes</a></div>
+                <div class="col-md-2 at_navbar_btn"><a href="eliminaringrediente">Baja de<br>ingredientes</a></div>
                 <div class="col-md-2 at_navbar_btn"><a href="cargarListaConIngredientes?accion=agregarstock">Agregar stock<br>a ingrediente</a></div>
                 <div class="col-md-2 at_navbar_btn"><a href="cargarListaConIngredientes?accion=eliminarstock">Quitar stock<br>a ingrediente</a></div>
             </div>

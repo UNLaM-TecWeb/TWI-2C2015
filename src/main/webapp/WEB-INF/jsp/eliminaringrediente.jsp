@@ -4,33 +4,35 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <html>
-<head>
+	<head>
         <meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href='<c:url value="/css/bootstrap-theme.min.css"/>' type="text/css" rel="stylesheet" media="screen">
+        <link href='<c:url value="/css/bootstrap.min.css"/>' type="text/css" rel="stylesheet" media="screen">
+        <link href='<c:url value="/css/estilos.css"/>' type="text/css" rel="stylesheet" media="screen">
         <title>Sanguchetto S.A.</title>
     </head>
     <body>
         
-    <div class="row">
-	    <div class="col-md-2 col-md-offset-5">
-	    	<h1>Sanguchetto</h1>
-	    </div>
-	</div>
-
-	<nav class="navbar navbar-inverse" style="background-color: green">
-		<div>
-			<ul class="nav navbar-nav">
-		        <li class="nav-item"><a href="cargarListaConIngredientes?accion=armatusangucheto">Arma tu Sangucheto</a></li>
-		        <li class="nav-item"><a href="listaIngredientes">Listar Ingredientes</a></li>
-		        <li class="nav-item"><a href="altaIngrediente">Alta de Ingredientes</a></li> 
-		        <li class="nav-item"><a href="cargarListaConIngredientes?accion=agregarstock">Agregar stock a ingredientes</a></li> 
-		        <li class="nav-item"><a href="cargarListaConIngredientes?accion=eliminarstock">Quitar stock a ingrediente</a></li> 
-		        <li class="nav-item"><a href="eliminaringrediente">Eliminar ingrediente</a></li>
-		    </ul>
-	   	</div>
-	</nav>
+    <div class="container">
+            <div class="row">
+                <div class="col-md-12 at_header">
+                     <p><a href="/sangucheto">SANGUCHETO</a></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2 at_navbar_btn"><a href="cargarListaConIngredientes?accion=armatusangucheto">Arma tu<br>sangucheto</a></div>
+                <div class="col-md-2 at_navbar_btn"><a href="listaIngredientes">Listar<br>ingredientes</a></div>
+                <div class="col-md-2 at_navbar_btn"><a href="altaIngrediente">Alta de<br>ingredientes</a></div>
+                <div class="col-md-2 at_navbar_btn"><a href="eliminaringrediente">Baja de<br>ingredientes</a></div>
+                <div class="col-md-2 at_navbar_btn"><a href="cargarListaConIngredientes?accion=agregarstock">Agregar stock<br>a ingrediente</a></div>
+                <div class="col-md-2 at_navbar_btn"><a href="cargarListaConIngredientes?accion=eliminarstock">Quitar stock<br>a ingrediente</a></div>
+            </div>
+          
+            <div class="row">
+                <div class="col-md-12 at_separator"></div>
+            </div>
 	<div class="row">
 		<div class="col-md-2"></div>
 		<div class="col-md-8">
@@ -62,6 +64,8 @@
 		</div>
 		<div class="col-md-2"></div>
 	</div>
+	
+	</div><!-- Cierra container -->  
 	<script src="js/jquery.js"></script>
 	<script src="js/bootstrap.js"></script>
 </body>
