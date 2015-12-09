@@ -1,5 +1,7 @@
 package tallerweb.sangucheto.controladores;
 
+import java.util.Iterator;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -13,6 +15,8 @@ import tallerweb.sangucheto.modelo.Ingrediente;
 import tallerweb.sangucheto.modelo.IngredienteConStock;
 import tallerweb.sangucheto.modelo.Sanguchetto;
 import tallerweb.sangucheto.modelo.Stock;
+
+
 
 @Controller
 public class SanguchettoControlador {
@@ -59,6 +63,29 @@ public class SanguchettoControlador {
 		modelo.put("tabla", tabla.obtenerStock());
 		return "eliminaringrediente";
 	}
+//	@RequestMapping("/vaciarSanguchetto")
+//	public ModelAndView vaciarSanguchetto() {
+//		ModelMap miMapa = new ModelMap();
+//
+//		Sanguchetto sanguchetto = Sanguchetto.getInstance();
+//		Stock stock = Stock.getInstance();
+//		Iterator<Ingrediente> iterator = sanguchetto.verIngredientesYCondimentos().iterator();
+//
+//		while (iterator.hasNext()) {
+//			Ingrediente cadaElemento = iterator.next();
+//			stock.agregarStock(cadaElemento, 1);
+//		}
+//
+//		sanguchetto.vaciar();
+//		miMapa.put("cantProductosAgregados", sanguchetto.verIngredientesYCondimentos().size());
+//		miMapa.put("tabla", sanguchetto.verIngredientesYCondimentos());
+//		ModelAndView miVista = new ModelAndView();
+//		miVista.addAllObjects(miMapa);
+//		miVista.setViewName("armatusangucheto");
+//		return miVista;
+//
+//	}
+	
 	@RequestMapping("/cargarListaConIngredientes")
 	public ModelAndView elegirIngrediente(@RequestParam("accion") String accion) {
 		ModelAndView mav;

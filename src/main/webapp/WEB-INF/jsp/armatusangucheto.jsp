@@ -99,6 +99,12 @@
                 	</c:forEach>
                 </div>
                 <div class="col-md-4"></div>
+                
+					<form action="vaciarSanguchetto" method="POST">
+						<input type="submit" class="btn btn-default"
+							value="A la mierda todo.">
+					</form>
+				
             </div>
         </div> <!-- Cierra container -->        
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
