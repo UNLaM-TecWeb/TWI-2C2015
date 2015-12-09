@@ -7,102 +7,216 @@
         <meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href='<c:url value="/css/bootstrap-theme.min.css"/>' type="text/css" rel="stylesheet" media="screen">
+        <link href='<c:url value="/css/bootstrap.min.css"/>' type="text/css" rel="stylesheet" media="screen">
         <title>Sanguchetto S.A.</title>
+        <style>
+            .container {
+                background-color: #00543f;
+            }
+            
+            .at_header {
+                background-color: #00543f;
+                height: 150px;
+                display: flex;
+                justify-content: center; /* align horizontal */
+                align-items: center; /* align vertical */
+                color: yellow;
+                text-shadow: 5px 5px #000;
+                font-family: sans-serif, monospace;
+                font-weight: 600;
+                font-size: 3.5em;
+            }
+            
+            .at_navbar_btn {
+                float: left;
+                background-color: #00543f;
+                height: 50px;
+                display: flex;
+                justify-content: center; /* align horizontal */
+                align-items: center; /* align vertical */
+                color: white;
+                font-family: sans-serif, monospace;
+                font-weight: 600;
+                font-size: 1em;
+                text-align: center;
+            }
+            
+            .at_list_header {
+                float: left;
+                background-color: #e6e6e6;
+                height: 50px;
+                display: flex;
+                justify-content: center; /* align horizontal */
+                align-items: center; /* align vertical */
+                color: black;
+                font-family: sans-serif, monospace;
+                font-weight: 600;
+                font-size: 1em;
+                text-align: center;
+            }
+            
+            .at_list_item {
+                float: left;
+                background-color: #e6e6e6;
+                height: 50px;
+                display: flex;
+                justify-content: center; /* align horizontal */
+                align-items: center; /* align vertical */
+                color: black;
+                font-family: sans-serif, monospace;
+                font-weight: 500;
+                font-size: 1em;
+                text-align: center;
+            }
+            
+            .at_page_header {
+                background-color: #fff;
+                height: 75px;
+                display: flex;
+                justify-content: center; /* align horizontal */
+                align-items: center; /* align vertical */
+                color: black;
+                font-family: sans-serif, monospace;
+                font-weight: 500;
+                font-size: 2.5em;
+            }
+            
+            .at_off_box_title {
+                font-size: 1.3em;
+                font-weight: 600;
+            }
+            
+            .at_off_box_background {background-color: white;}
+            
+            .at_off_box {
+                background-color: darkcyan;
+                font-family: sans-serif, monospace;
+                color: white;
+                font-weight: 500;
+                font-size: 1em;
+                border-radius: .5em;
+            }
+            
+            .at_off_box div {
+                float: left;
+                padding: 0.1em;
+                margin: 0.1em;
+            }
+            
+            .at_separator {
+                background-color: white; 
+                height: 5px;
+            }
+            
+            .at_sangucheto_box {
+                background-color: cornflowerblue;
+                font-family: sans-serif, monospace;
+                color: white;
+                font-weight: 500;
+                font-size: 1em;
+                border-radius: .5em;
+                margin-left: .5em;
+            }
+            
+			a:link {color: white;} 		                    /* unvisited link 	*/
+			a:visited {color: white;} 	                    /* visited link 	*/
+			a:hover {color: yellow;text-decoration: none} 	/* mouse over link 	*/
+			a:active {color: white;}	                    /* selected link 	*/
+        </style>
     </head>
     <body>
-	    <nav class="navbar navbar-inverse" style="background-color: green">
-			<a class="navbar-brand" href="/sangucheto">Sangucheto</a>
-			<div>
-				<ul class="nav navbar-nav">
-			        <li class="nav-item"><a href="cargarListaConIngredientes?accion=armatusangucheto">Arma tu Sangucheto</a></li>
-			        <li class="nav-item"><a href="listaIngredientes">Listar Ingredientes</a></li>
-			        <li class="nav-item"><a href="altaIngrediente">Alta de Ingredientes</a></li> 
-			        <li class="nav-item"><a href="cargarListaConIngredientes?accion=agregarstock">Agregar stock a ingredientes</a></li> 
-			        <li class="nav-item"><a href="cargarListaConIngredientes?accion=eliminarstock">Quitar stock a ingrediente</a></li> 
-			    </ul>
-		   	</div>
-		</nav>
-	    
-	    <div class="row">
-		    <div class="col-md-offset-4">
-	        <h1>Arma tu sangucheto</h1>
-	        </div>
-	    </div>
-	     
-	    
- <div class="container">
-			
-		<div class = "form-group">
-<!-- 		esto es el menu de ingredientes para agregar a sangucheto -->
-			<form:form class="form-horizontal" method="post" action="agregarasangucheto" modelAttribute="ingredienteConStock">
-	            <h1>Eleg&iacute; tus ingredientes favoritos.</h1>
-	         
-	         
-	         <div class="form-group">
-	         	<label class="control-label col-sm-2" for="Ingredientes">Ingredientes:</label>
-	        	 <div class="col-sm-10">
-	        	<form:select class="form-control" path="nombre">
-					<c:forEach var="each" items="${mapa}">                
-	                	<form:option value="${each.key.nombre}" label="${each.key.nombre}, Precio: ARS${each.key.precio}, Stock: ${each.value}"/> 
-	                </c:forEach>
-            	</form:select>
-            	</div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 at_header">
+                    <p>SANGUCHETO</p>
+                </div>
             </div>
-            
-             <div class = "form-group">
-			    <label class="control-label col-sm-2" for="cantidad">Cantidad:</label>
-				  <div class="col-sm-10">
-	        			<form:input type="text" class="form-control" placeholder="Ingrese cantidad" path="stock"/>
-	      		  </div>
-		    </div>
-            
-            <br>
-            <div class="col-md-4 col-md-offset-5">
-	            <input class="btn btn-primary" type="submit" value="agregar"/>
-	            <input class="btn btn-warning" type="reset"/>
+            <div class="row">
+                <div class="col-md-2 at_navbar_btn"><a href="cargarListaConIngredientes?accion=armatusangucheto">Arma tu<br>sangucheto</a></div>
+                <div class="col-md-2 at_navbar_btn"><a href="listaIngredientes">Listar<br>ingredientes</a></div>
+                <div class="col-md-2 at_navbar_btn"><a href="altaIngrediente">Alta de<br>ingredientes</a></div>
+                <div class="col-md-2 at_navbar_btn"><a href="">Baja de<br>ingredientes</a></div>
+                <div class="col-md-2 at_navbar_btn"><a href="cargarListaConIngredientes?accion=agregarstock">Agregar stock<br>a ingrediente</a></div>
+                <div class="col-md-2 at_navbar_btn"><a href="cargarListaConIngredientes?accion=eliminarstock">Quitar stock<br>a ingrediente</a></div>
             </div>
-            <br>
-	    	<br>   
-        </form:form>
-        
-        
-<!--         Esto solo muestra el contenido del sangucheto -->
-	        <form:form class="form-horizontal" method="post" action="agregarasangucheto" modelAttribute="ingredienteConStock">
-	        	<h2>Mir&aacute; como esta quedando tu sangucheto:</h2>
-		        
-		        <div class="form-group">
-			        <div class="col-sm-10">
-			        <form:select class="form-control" path="nombre" multiple="true">
-						<c:forEach var="each" items="${sangucheto}">                
-							<form:option value="${each.nombre}" label="${each.nombre}"/> 
-						</c:forEach>
-			        </form:select>
-			        </div>
-			     </div>
-	        </form:form>
-        
-        <form:form method="post" action="calcularDescuento" modelAttribute="descuento">
-	        <h3>Descuentos:</h3>
-	        <p>Monto fijo</p> <form:input path="valorFijo"/>
-	        <p>Monto porcentual</p> <form:input path="valorPorcentual"/>
-	        
-	        <p>Costo del sangucheto: ${descuento.precioSanguchetoSinDescuento}</p>
-	        <p>Costo con descuento del sangucheto: ${descuento.precioSanguchetoConDescuento}</p>
-	        <p>Estas ahorrando: ${descuento.ahorro}</p>
-	        <p>Costo del sangucheto: ${descuento.precioSanguchetoConDescuento}</p>
-	        <p>Costo con descuento del sangucheto: ${descuento.precioSanguchetoConDescuento}</p>
-	        <p>Estas ahorrando:</p>
-			<input type="submit" value="Aplicar descuento"/>
-            <input type="reset"/>   
-        </form:form>
-        
+            <div class="row">
+                <div class="col-sm-12 at_page_header">
+                    <p>Elej&iacute; los ingredientes para tu Sangucheto !!!</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4 at_list_header">Ingrediente</div>
+                <div class="col-sm-2 at_list_header">Precio $</div>
+                <div class="col-sm-2 at_list_header">Stock</div>
+                <div class="col-sm-2 at_list_header">Cantidad</div>
+                <div class="col-sm-2 at_list_header">Acci&oacute;n</div>
+            </div>
+            <c:forEach var="ingrediente" items="${mapa}">
+	            <c:if test="${ingrediente.value > 0}">
+		            <div class="row">
+		            	<form:form method="post" action="agregarIngrediente?nombreIngrediente=${ingrediente.key.nombre}" modelAttribute="ingredienteConStock">
+			                <div class="col-sm-4 at_list_item">
+			                	${ingrediente.key.nombre}
+			                </div>
+			                <div class="col-sm-2 at_list_item">
+			                	${ingrediente.key.precio}
+			                </div>
+			                <div class="col-sm-2 at_list_item">
+			                	${ingrediente.value}
+			                </div>
+			                <div class="col-sm-2 at_list_item">
+			                	<form:input path="stock" type="text" class="form-control input-sm"/>
+			                </div>
+			                <div class="col-sm-2 at_list_item">
+			                	<input type="submit" class="btn btn-success btn-xs" value="Agregar"/>	
+			                </div>
+		            	</form:form>
+		            </div>
+	            </c:if>
+            </c:forEach>
+            <div class="row">
+                <div class="col-md-12 at_separator"></div>
+            </div>
+            <div class="row at_off_box_background">
+                <div class="col-md-4 at_off_box">
+                    <div class="at_off_box_title">
+                        <p>Precio $ ${precioTotalSangucheto} / Ahorro $ ${ahorroSangucheto}</p>
+                    </div>
+                    <div>
+                        <p>¿T&eacute;nes un descuento? Ingresalo ac&aacute;:</p>
+                    </div>
+                    <form:form method="post" action="agregarDescuento" modelAttribute="descuento">
+                        <div>
+	                        <form:input path="valorFijo" type="text" class="form-control input-sm" placeholder="Monto fijo"/>
+	                    </div>
+                        <div>
+	                        <form:input path="valorPorcentual" type="text" class="form-control input-sm" placeholder="Monto porcentual"/>
+	                    </div>
+	                    <div>
+	                        <input type="submit" class="btn btn-success btn-md" value="Agregar"/>
+	                    </div>
+                    </form:form>
+                </div>
+                <div class="col-md-4 at_sangucheto_box">
+                    <div class="at_off_box_title">
+                        <p>As&iacute; esta quedando tu sangucheto !</p>
+                    </div>
+                	<c:forEach var="ingrediente" items="${listaDeIngredientesSangucheto}">
+                		<form:form method="post" action="quitarDeSangucheto" modelAtribute="IngredienteConStock">
+                            <div>
+                		        <p>${ingrediente.nombre}, $ ${ingrediente.precio}</p>
+                            </div>
+                		</form:form>
+                	</c:forEach>
+                </div>
+                <div class="col-md-4"></div>
+            </div>
+        </div> <!-- Cierra container -->        
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-	<script src="js/jquery-1.11.3.min.js"></script>
+	<script src='<c:url value="/js/jquery-1.11.3.min.js" />' type="text/javascript"></script>
 	<!-- Include all compiled plugins (below), or include individual files as needed -->
-	<script src="js/bootstrap.min.js"></script>
-		</div>
-		
-</div>		
+    <script src='<c:url value="/js/bootstrap.min.js" />' type="text/javascript" ></script>
     </body>
 </html>

@@ -7,7 +7,6 @@ public class Sanguchetto {
 
 	private static Sanguchetto instance = new Sanguchetto();
 	private List<Ingrediente> ingredientes = new LinkedList<Ingrediente>();
-	private List<Descuento> descuentos = new LinkedList<Descuento>();
 	
 	private Sanguchetto(){}
 	
@@ -82,22 +81,5 @@ public class Sanguchetto {
 			precioTotal += cadaElemento.getPrecio();
 		
 		return precioTotal;
-	}
-
-	public void agregarDescuento(Double valorFijo, Double valorPorcentual) {
-		descuentos.add(new Descuento(valorFijo, valorPorcentual));
-	}
-	
-	public Double calcularDescuentoTotal() {
-		Double descuentoTotal = 0.0;
-		
-		for (Descuento cadaDescuento : descuentos)
-			descuentoTotal += cadaDescuento.calcularDescuento(getPrecio());
-		
-		return descuentoTotal;
-	}
-	
-	public Double getPrecioConDescuento() {
-		return (getPrecio() - calcularDescuentoTotal());
 	}
 }
