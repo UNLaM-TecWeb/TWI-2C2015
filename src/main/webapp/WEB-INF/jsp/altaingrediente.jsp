@@ -44,7 +44,7 @@
         <div class="row">
             <form:form method="post" action="crearIngrediente" modelAttribute="ingrediente">
                 <div class="col-sm-3 at_list_item">
-                    <form:input path="nombre" type="text" class="form-control" value="" type="text" autofocus="true"/>
+                    <form:input path="nombre" type="text" class="form-control" value="" autofocus="true"/>
                 </div>
                 <div class="col-sm-3 at_list_item">
                     <form:input path="precio" class="form-control" value="0" min="0" type="number"/>
