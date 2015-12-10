@@ -47,7 +47,7 @@
                     <form:input path="nombre" type="text" class="form-control" value="" type="text" autofocus="true"/>
                 </div>
                 <div class="col-sm-3 at_list_item">
-                    <form:input path="precio" type="text" class="form-control" value="0" min="0" type="number"/>
+                    <form:input path="precio" class="form-control" value="0" min="0" type="number"/>
                 </div>
                 <div class="col-sm-3 at_list_item">
                 	<form:select path="tipo" class="form-control">
