@@ -6,7 +6,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -43,16 +42,17 @@ public class SanguchettoControlador {
 	
 	@RequestMapping("/modificarStock")
 	public ModelAndView eliminarStock(	@ModelAttribute("ingredienteConStock") IngredienteConStock ics,
-										@RequestParam("accion") String accion){
+										@RequestParam("accion") String accion,
+										@RequestParam("nombreIngrediente") String nombreIngrediente){
 		Ingrediente temporal = new Ingrediente();
-		temporal.setNombre(ics.getNombre());
+		temporal.setNombre(nombreIngrediente);
 		
 		if (accion.equals("agregar"))
 			Stock.getInstance().agregarStock(temporal, ics.getStock());
 		else
 			Stock.getInstance().comprarIngrediente(temporal, ics.getStock());
 
-		return new ModelAndView("redirect:listaIngredientes"); 
+		return new ModelAndView("redirect:cargarListaConIngredientes?accion=agregarstock"); 
 	}
 	
 	@RequestMapping("/eliminaringrediente")
@@ -63,28 +63,25 @@ public class SanguchettoControlador {
 		modelo.put("tabla", tabla.obtenerStock());
 		return "eliminaringrediente";
 	}
-//	@RequestMapping("/vaciarSanguchetto")
-//	public ModelAndView vaciarSanguchetto() {
-//		ModelMap miMapa = new ModelMap();
-//
-//		Sanguchetto sanguchetto = Sanguchetto.getInstance();
-//		Stock stock = Stock.getInstance();
-//		Iterator<Ingrediente> iterator = sanguchetto.verIngredientesYCondimentos().iterator();
-//
-//		while (iterator.hasNext()) {
-//			Ingrediente cadaElemento = iterator.next();
-//			stock.agregarStock(cadaElemento, 1);
-//		}
-//
-//		sanguchetto.vaciar();
-//		miMapa.put("cantProductosAgregados", sanguchetto.verIngredientesYCondimentos().size());
-//		miMapa.put("tabla", sanguchetto.verIngredientesYCondimentos());
-//		ModelAndView miVista = new ModelAndView();
-//		miVista.addAllObjects(miMapa);
-//		miVista.setViewName("armatusangucheto");
-//		return miVista;
-//
-//	}
+	
+	@RequestMapping("/vaciarSangucheto")
+	public ModelAndView vaciarSanguchetto() {
+		Sanguchetto sangucheto = Sanguchetto.getInstance();
+		Stock stock = Stock.getInstance();
+		
+		// Recorro el carrito y por cada ingrediente que hay en el sumo 1 de stock a su equivalente en el Stock.
+		Iterator<Ingrediente> iterator = sangucheto.verIngredientesYCondimentos().iterator();
+		while (iterator.hasNext()) {
+			Ingrediente cadaElemento = iterator.next();
+			stock.agregarStock(stock.obtenerIngredientePorNombre(cadaElemento.getNombre()), 1);
+		}
+		
+		// Luego de recuperar el stock vacío el carrito. Elimino ingredientes y descuentos.
+		sangucheto.vaciar();
+		sangucheto.vaciarDescuentos();
+		
+		return new ModelAndView("redirect:cargarListaConIngredientes?accion=armatusangucheto");
+	}
 	
 	@RequestMapping("/cargarListaConIngredientes")
 	public ModelAndView elegirIngrediente(@RequestParam("accion") String accion) {

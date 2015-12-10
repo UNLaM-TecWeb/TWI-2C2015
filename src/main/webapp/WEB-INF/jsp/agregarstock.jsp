@@ -16,55 +16,54 @@
 
 <body>
 	<div class="container">
+        <div class="row">
+            <div class="col-md-12 at_header">
+                 <p><a href="/sangucheto" style="color: yellow">SANGUCHETO</a></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-2 at_navbar_btn"><a href="cargarListaConIngredientes?accion=armatusangucheto">Arma tu<br>sangucheto</a></div>
+            <div class="col-md-2 at_navbar_btn"><a href="listaIngredientes">Listar<br>ingredientes</a></div>
+            <div class="col-md-2 at_navbar_btn"><a href="altaIngrediente">Alta de<br>ingredientes</a></div>
+            <div class="col-md-2 at_navbar_btn"><a href="eliminaringrediente">Baja de<br>ingredientes</a></div>
+            <div class="col-md-2 at_navbar_btn"><a href="cargarListaConIngredientes?accion=agregarstock">Agregar stock<br>a ingrediente</a></div>
+            <div class="col-md-1"></div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 at_page_header">
+                <p>Agregar stock a ingrediente.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4 at_list_header">Ingrediente</div>
+            <div class="col-sm-2 at_list_header">Precio $</div>
+            <div class="col-sm-2 at_list_header">Stock</div>
+            <div class="col-sm-2 at_list_header">Cantidad</div>
+            <div class="col-sm-2 at_list_header">Acci&oacute;n</div>
+        </div>
+        <c:forEach var="ingrediente" items="${mapa}">
             <div class="row">
-                <div class="col-md-12 at_header">
-                     <p><a href="/sangucheto">SANGUCHETO</a></p>
-                </div>
+                <form:form method="post" action="modificarStock?accion=agregar&nombreIngrediente=${ingrediente.key.nombre}" modelAttribute="ingredienteConStock">
+                    <div class="col-sm-4 at_list_item">
+                        ${ingrediente.key.nombre}
+                    </div>
+                    <div class="col-sm-2 at_list_item">
+                        ${ingrediente.key.precio}
+                    </div>
+                    <div class="col-sm-2 at_list_item">
+                        ${ingrediente.value}
+                    </div>
+                    <div class="col-sm-2 at_list_item">
+                        <form:input path="stock" type="text" class="form-control input-sm"/>
+                    </div>
+                    <div class="col-sm-2 at_list_item">
+                        <input type="submit" class="btn btn-success btn-sm" value="Agregar"/>	
+                    </div>
+                </form:form>
             </div>
-            <div class="row">
-                <div class="col-md-2 at_navbar_btn"><a href="cargarListaConIngredientes?accion=armatusangucheto">Arma tu<br>sangucheto</a></div>
-                <div class="col-md-2 at_navbar_btn"><a href="listaIngredientes">Listar<br>ingredientes</a></div>
-                <div class="col-md-2 at_navbar_btn"><a href="altaIngrediente">Alta de<br>ingredientes</a></div>
-                <div class="col-md-2 at_navbar_btn"><a href="eliminaringrediente">Baja de<br>ingredientes</a></div>
-                <div class="col-md-2 at_navbar_btn"><a href="cargarListaConIngredientes?accion=agregarstock">Agregar stock<br>a ingrediente</a></div>
-                <div class="col-md-2 at_navbar_btn"><a href="cargarListaConIngredientes?accion=eliminarstock">Quitar stock<br>a ingrediente</a></div>
-            </div>
-          
-            <div class="row">
-                <div class="col-md-12 at_separator"></div>
-            </div>
-	
-        	<div class="row">
-		        <div class="col-md-2 col-md-offset-5">
-		        	<h2>AGREGAR STOCK</h2>
-		        </div>
-			</div>
-        
-<!-- <div class="container"> -->
-        
-        <form:form method="post" action="modificarStock?accion=agregar" modelAttribute="ingredienteConStock">
-            <div class="col-sm-10">
-	            <form:select class="form-control" path="nombre">
-					<c:forEach var="each" items="${mapa}">                
-	                	<form:option value="${each.key.nombre}" label="${each.key.nombre}, Stock: ${each.value}"/> 
-	                </c:forEach>
-	            </form:select>
-            </div>
-            <br>
-            <br>
-            
-            <div class="col-sm-10">
-	            <form:input class="form-control" placeholder="Ingrese stock a agregar" path="stock"/>
-	            <br>
-	            <input class="btn btn-warning" type="submit"/>
-            </div>
-            
-        </form:form>
-    
-    
-<!-- </div> -->
-
-</div> <!-- Cierra container --> 
+        </c:forEach>
+    </div> <!-- Cierra container --> 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src='<c:url value="/js/jquery-1.11.3.min.js" />' type="text/javascript"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->

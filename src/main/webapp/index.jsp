@@ -10,28 +10,34 @@
 		<link href='<c:url value="/css/bootstrap-theme.min.css"/>' type="text/css" rel="stylesheet" media="screen">
         <link href='<c:url value="/css/bootstrap.min.css"/>' type="text/css" rel="stylesheet" media="screen">
         <link href='<c:url value="/css/estilos.css"/>' type="text/css" rel="stylesheet" media="screen">
-        <title>Sanguchetto S.A.</title>
+        <title>Sangucheto S.A.</title>
     </head>
     <body>
 
         <div class="container">
             <div class="row">
                 <div class="col-md-12 at_header">
-                    <p><a href="/sangucheto">SANGUCHETO</a></p>
+                    <p><a href="/sangucheto" style="color: yellow">SANGUCHETO</a></p>
                 </div>
             </div>
             <div class="row">
+                <div class="col-md-1"></div>
                 <div class="col-md-2 at_navbar_btn"><a href="cargarListaConIngredientes?accion=armatusangucheto">Arma tu<br>sangucheto</a></div>
                 <div class="col-md-2 at_navbar_btn"><a href="listaIngredientes">Listar<br>ingredientes</a></div>
                 <div class="col-md-2 at_navbar_btn"><a href="altaIngrediente">Alta de<br>ingredientes</a></div>
                 <div class="col-md-2 at_navbar_btn"><a href="eliminaringrediente">Baja de<br>ingredientes</a></div>
                 <div class="col-md-2 at_navbar_btn"><a href="cargarListaConIngredientes?accion=agregarstock">Agregar stock<br>a ingrediente</a></div>
-                <div class="col-md-2 at_navbar_btn"><a href="cargarListaConIngredientes?accion=eliminarstock">Quitar stock<br>a ingrediente</a></div>
+                <div class="col-md-1"></div>
             </div>
-          
             <div class="row">
                 <div class="col-md-12 at_separator"></div>
             </div>
+            <div class="row">
+                <div class="col-md-12 at_index_msg">
+                    <p>Por favor, elija una opci&oacute;n.</p>
+                </div>
+            </div>
+
            
         </div> <!-- Cierra container -->        
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

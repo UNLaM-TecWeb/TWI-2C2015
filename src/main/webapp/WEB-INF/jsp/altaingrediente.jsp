@@ -16,33 +16,75 @@
 
 <body>
 	<div class="container">
+        <div class="row">
+            <div class="col-md-12 at_header">
+                <p><a href="/sangucheto" style="color: yellow">SANGUCHETO</a></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-2 at_navbar_btn"><a href="cargarListaConIngredientes?accion=armatusangucheto">Arma tu<br>sangucheto</a></div>
+            <div class="col-md-2 at_navbar_btn"><a href="listaIngredientes">Listar<br>ingredientes</a></div>
+            <div class="col-md-2 at_navbar_btn"><a href="altaIngrediente">Alta de<br>ingredientes</a></div>
+            <div class="col-md-2 at_navbar_btn"><a href="eliminaringrediente">Baja de<br>ingredientes</a></div>
+            <div class="col-md-2 at_navbar_btn"><a href="cargarListaConIngredientes?accion=agregarstock">Agregar stock<br>a ingrediente</a></div>
+            <div class="col-md-1"></div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 at_page_header">
+                <p>Agrega todos los ingredientes y condimentos que quieras !!!</p>
+            </div>
+        </div>
+        
+	<!-- ------------ -->
+	
+       <div class="row">
+            <div class="col-sm-3 at_list_header">Ingrediente</div>
+            <div class="col-sm-3 at_list_header">Precio $</div>
+            <div class="col-sm-3 at_list_header">Tipo</div>
+            <div class="col-sm-3 at_list_header"></div>
+        </div>
+        <div class="row">
+            <form:form method="post" action="crearIngrediente" modelAttribute="ingrediente">
+                <div class="col-sm-3 at_list_item">
+                    <form:input path="nombre" type="text" class="form-control" autofocus="true"/>
+                </div>
+                <div class="col-sm-3 at_list_item">
+                    <form:input path="precio" type="text" class="form-control"/>
+                </div>
+                <div class="col-sm-3 at_list_item">
+                	<form:select path="tipo" class="form-control">
+                	    <form:option value="INGREDIENTE" label="Ingrediente"/>
+				        <form:option value="CONDIMENTO" label="Condimento"/>
+                	</form:select>
+                </div>
+                <div class="col-sm-3 at_list_item">
+                    <input type="submit" class="btn btn-success btn-sm" value="Dar de alta"/>	
+                </div>
+            </form:form>
+        </div>        
+        <c:forEach var="ingrediente" items="${mapa}">
             <div class="row">
-                <div class="col-md-12 at_header">
-                    <p>SANGUCHETO</p>
+                <div class="col-sm-4 at_list_item">
+                    ${ingrediente.key.nombre}
+                </div>
+                <div class="col-sm-2 at_list_item">
+                    ${ingrediente.key.precio}
+                </div>
+                <div class="col-sm-2 at_list_item">
+                    ${ingrediente.key.tipo}
+                </div>
+                <div class="col-sm-2 at_list_item">
+                    ${ingrediente.value}
+                </div>
+                <div class="col-sm-2 at_list_item">
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-2 at_navbar_btn"><a href="cargarListaConIngredientes?accion=armatusangucheto">Arma tu<br>sangucheto</a></div>
-                <div class="col-md-2 at_navbar_btn"><a href="listaIngredientes">Listar<br>ingredientes</a></div>
-                <div class="col-md-2 at_navbar_btn"><a href="altaIngrediente">Alta de<br>ingredientes</a></div>
-                <div class="col-md-2 at_navbar_btn"><a href="eliminaringrediente">Baja de<br>ingredientes</a></div>
-                <div class="col-md-2 at_navbar_btn"><a href="cargarListaConIngredientes?accion=agregarstock">Agregar stock<br>a ingrediente</a></div>
-                <div class="col-md-2 at_navbar_btn"><a href="cargarListaConIngredientes?accion=eliminarstock">Quitar stock<br>a ingrediente</a></div>
-            </div>
-          
-            <div class="row">
-                <div class="col-md-12 at_separator"></div>
-            </div>
-            
-			<div class="row">
-		        <div class="col-md-2 col-md-offset-5">
-		        	<h2>ALTA DE INGREDIENTE</h2>
-		        </div>
-			</div>
-
+        </c:forEach>
 	
-<!-- 	<div class="container"> -->
-		<form:form class="form-horizontal" method="post" action="crearIngrediente" modelAttribute="ingrediente">
+	<!-- ------------ -->
+
+<!--	<form:form class="form-horizontal" method="post" action="crearIngrediente" modelAttribute="ingrediente">
 		    <div class = "form-group">
 			    <label class="control-label col-sm-2" for="nombre">Nombre:</label>
 				  <div class="col-sm-8">
@@ -57,15 +99,6 @@
 	      		  </div>
 		    </div>
 		        
-<!-- 		    <p>Precio</p> -->
-<%-- 		    <form:input path="precio"/> --%>
-		        
-<!-- 		    <p>Tipo</p> -->
-<%-- 		    <form:select path="tipo"> --%>
-<%-- 		        <form:option value="INGREDIENTE" label="Ingrediente"/> --%>
-<%-- 		        <form:option value="CONDIMENTO" label="Condimento"/> --%>
-<%-- 		    </form:select> --%>
-
 				<div class="form-group">
 			      <label class="control-label col-sm-2">Seleccione uno:</label>
 				      <div class="col-sm-8">
@@ -82,8 +115,7 @@
 				    <input class="btn btn-primary" type="submit"/>
 				    <input class="btn btn-warning" type="reset"/>
 			    </div>
-		</form:form>
-<!--     </div> -->
+		</form:form>-->
     
     </div> <!-- Cierra container -->
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

@@ -23,6 +23,13 @@ public class Sanguchetto {
 	}
 	
 	/**
+	 * Elimina todos los descuentos del sanguchetto.<br>
+	 */
+	public void vaciarDescuentos() {
+		descuentos.clear();
+	}
+	
+	/**
 	 * Agrega un ingrediente al carrito.<br>
 	 * @param ingrediente
 	 */

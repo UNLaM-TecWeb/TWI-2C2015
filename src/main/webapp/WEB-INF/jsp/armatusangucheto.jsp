@@ -10,27 +10,28 @@
 		<link href='<c:url value="/css/bootstrap-theme.min.css"/>' type="text/css" rel="stylesheet" media="screen">
         <link href='<c:url value="/css/bootstrap.min.css"/>' type="text/css" rel="stylesheet" media="screen">
         <link href='<c:url value="/css/estilos.css"/>' type="text/css" rel="stylesheet" media="screen">
-        <title>Sanguchetto S.A.</title>
+        <title>Sangucheto S.A.</title>
     </head>
     <body>
 
         <div class="container">
             <div class="row">
                 <div class="col-md-12 at_header">
-                   <p><a href="/sangucheto">SANGUCHETO</a></p>
+                   <p><a href="/sangucheto" style="color: yellow">SANGUCHETO</a></p>
                 </div>
             </div>
             <div class="row">
+                <div class="col-md-1"></div>
                 <div class="col-md-2 at_navbar_btn"><a href="cargarListaConIngredientes?accion=armatusangucheto">Arma tu<br>sangucheto</a></div>
                 <div class="col-md-2 at_navbar_btn"><a href="listaIngredientes">Listar<br>ingredientes</a></div>
                 <div class="col-md-2 at_navbar_btn"><a href="altaIngrediente">Alta de<br>ingredientes</a></div>
                 <div class="col-md-2 at_navbar_btn"><a href="eliminaringrediente">Baja de<br>ingredientes</a></div>
                 <div class="col-md-2 at_navbar_btn"><a href="cargarListaConIngredientes?accion=agregarstock">Agregar stock<br>a ingrediente</a></div>
-                <div class="col-md-2 at_navbar_btn"><a href="cargarListaConIngredientes?accion=eliminarstock">Quitar stock<br>a ingrediente</a></div>
+				<div class="col-md-1"></div>
             </div>
             <div class="row">
                 <div class="col-sm-12 at_page_header">
-                    <p>Elej&iacute; los ingredientes para tu Sangucheto !!!</p>
+                    <p>Eleg&iacute; los ingredientes para tu Sangucheto !!!</p>
                 </div>
             </div>
             <div class="row">
@@ -81,7 +82,7 @@
                         <div>
 	                        <form:input path="valorPorcentual" type="text" class="form-control input-sm" placeholder="Monto porcentual"/>
 	                    </div>
-	                    <div>
+	                    <div class="at_btn_agregar">
 	                        <input type="submit" class="btn btn-success btn-md" value="Agregar"/>
 	                    </div>
                     </form:form>
@@ -99,12 +100,21 @@
                 	</c:forEach>
                 </div>
                 <div class="col-md-4"></div>
-                
-					<form action="vaciarSanguchetto" method="POST">
-						<input type="submit" class="btn btn-default"
-							value="A la mierda todo.">
-					</form>
-				
+            </div>
+            <div class="row">
+                <div class="col-md-12 at_separator"></div>
+            </div>
+            <div class="row at_vaciar_carrito_row">
+                <div class="col-md-2"></div>
+                <div class="col-md-2"></div>
+                <div class="col-md-2"></div>
+                <div class="col-md-2"></div>
+                <div class="col-md-2"></div>
+                <div class="col-md-2">
+                    <form:form action="vaciarSangucheto" method="post">
+                        <input type="submit" class="btn btn-default btn-danger btn-md" value="Vaciar carrito">
+                    </form:form>
+                </div>
             </div>
         </div> <!-- Cierra container -->        
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

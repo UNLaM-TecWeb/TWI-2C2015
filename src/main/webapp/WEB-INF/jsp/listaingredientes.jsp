@@ -15,26 +15,48 @@
 
 <body>
 	<div class="container">
+        <div class="row">
+            <div class="col-md-12 at_header">
+                <p><a href="/sangucheto" style="color: yellow">SANGUCHETO</a></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-2 at_navbar_btn"><a href="cargarListaConIngredientes?accion=armatusangucheto">Arma tu<br>sangucheto</a></div>
+            <div class="col-md-2 at_navbar_btn"><a href="listaIngredientes">Listar<br>ingredientes</a></div>
+            <div class="col-md-2 at_navbar_btn"><a href="altaIngrediente">Alta de<br>ingredientes</a></div>
+            <div class="col-md-2 at_navbar_btn"><a href="eliminaringrediente">Baja de<br>ingredientes</a></div>
+            <div class="col-md-2 at_navbar_btn"><a href="cargarListaConIngredientes?accion=agregarstock">Agregar stock<br>a ingrediente</a></div>
+            <div class="col-md-1"></div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 at_page_header">
+                <p>Mir&aacute; los ingredientes y condimentos que t&eacute;nes !!!</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3 at_list_header">Ingrediente</div>
+            <div class="col-sm-3 at_list_header">Precio $</div>
+            <div class="col-sm-3 at_list_header">Tipo</div>
+            <div class="col-sm-3 at_list_header">Stock</div>
+        </div>
+        <c:forEach var="ingrediente" items="${mapa}">
             <div class="row">
-                <div class="col-md-12 at_header">
-                    <p><a href="/sangucheto">SANGUCHETO</a></p>
+                <div class="col-sm-3 at_list_item">
+                    ${ingrediente.key.nombre}
+                </div>
+                <div class="col-sm-3 at_list_item">
+                    ${ingrediente.key.precio}
+                </div>
+                <div class="col-sm-3 at_list_item">
+                    ${ingrediente.key.tipo}
+                </div>
+                <div class="col-sm-3 at_list_item">
+                    ${ingrediente.value}
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-2 at_navbar_btn"><a href="cargarListaConIngredientes?accion=armatusangucheto">Arma tu<br>sangucheto</a></div>
-                <div class="col-md-2 at_navbar_btn"><a href="listaIngredientes">Listar<br>ingredientes</a></div>
-                <div class="col-md-2 at_navbar_btn"><a href="altaIngrediente">Alta de<br>ingredientes</a></div>
-                <div class="col-md-2 at_navbar_btn"><a href="eliminaringrediente">Baja de<br>ingredientes</a></div>
-                <div class="col-md-2 at_navbar_btn"><a href="cargarListaConIngredientes?accion=agregarstock">Agregar stock<br>a ingrediente</a></div>
-                <div class="col-md-2 at_navbar_btn"><a href="cargarListaConIngredientes?accion=eliminarstock">Quitar stock<br>a ingrediente</a></div>
-            </div>
-          
-            <div class="row">
-                <div class="col-md-12 at_separator"></div>
-            </div>
-           
-        
-    <h1>LISTA DE INGREDIENTES</h1>
+        </c:forEach>        
+    <!-- <h1>LISTA DE INGREDIENTES</h1>
 	<table class="table table-bordered">
 		<tr>
 			<td>INGREDIENTE</td>
@@ -50,7 +72,7 @@
 				<td>${ingrediente.value}</td>
 			</tr>
 		</c:forEach>
-	</table>	
+	</table> -->
    </div> <!-- Cierra container -->
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src='<c:url value="/js/jquery-1.11.3.min.js" />' type="text/javascript"></script>
