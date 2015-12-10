@@ -55,7 +55,7 @@
                         ${ingrediente.value}
                     </div>
                     <div class="col-sm-2 at_list_item">
-                        <form:input path="stock" type="text" class="form-control input-sm"/>
+                        <form:input path="stock"  value="0" min="0" type="number" class="form-control input-sm"/>
                     </div>
                     <div class="col-sm-2 at_list_item">
                         <input type="submit" class="btn btn-success btn-sm" value="Agregar"/>	

@@ -20,17 +20,18 @@ import tallerweb.sangucheto.modelo.Stock;
 @Controller
 public class SanguchettoControlador {
 	
-	@RequestMapping("/altaIngrediente")
+	@RequestMapping("/altaIngrediente") // le pasa a la vista un objeto del tipo Ingrediente.
 	public ModelAndView altaDeIngrediente() {
 		ModelAndView mav = new ModelAndView("altaingrediente");
 		mav.addObject("ingrediente", new Ingrediente());
+		mav.addObject("mapa", Stock.getInstance().obtenerStock());
 		return mav;
 	}
 	
 	@RequestMapping("/crearIngrediente")
 	public ModelAndView crearIngrediente(@ModelAttribute("ingrediente") Ingrediente ingrediente) {
 		Stock.getInstance().agregarIngrediente(ingrediente);
-		return new ModelAndView("redirect:listaIngredientes");
+		return new ModelAndView("redirect:altaIngrediente");
 	}
 	
 	@RequestMapping("/listaIngredientes")
