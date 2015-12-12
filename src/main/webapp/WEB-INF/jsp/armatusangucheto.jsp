@@ -23,9 +23,9 @@
             <div class="row">
                 <div class="col-md-1"></div>
                 <div class="col-md-2 at_navbar_btn"><a href="cargarListaConIngredientes?accion=armatusangucheto">Arma tu<br>sangucheto</a></div>
-                <div class="col-md-2 at_navbar_btn"><a href="listaIngredientes">Listar<br>ingredientes</a></div>
-                <div class="col-md-2 at_navbar_btn"><a href="altaIngrediente">Alta de<br>ingredientes</a></div>
-                <div class="col-md-2 at_navbar_btn"><a href="eliminaringrediente">Baja de<br>ingredientes</a></div>
+                <div class="col-md-2 at_navbar_btn"><a href="cargarListaConIngredientes?accion=listaingredientes">Listar<br>ingredientes</a></div>
+                <div class="col-md-2 at_navbar_btn"><a href="cargarListaConIngredientes?accion=altaingrediente">Alta de<br>ingredientes</a></div>
+                <div class="col-md-2 at_navbar_btn"><a href="cargarListaConIngredientes?accion=bajaingrediente">Baja de<br>ingredientes</a></div>
                 <div class="col-md-2 at_navbar_btn"><a href="cargarListaConIngredientes?accion=agregarstock">Agregar stock<br>a ingrediente</a></div>
 				<div class="col-md-1"></div>
             </div>
@@ -77,10 +77,10 @@
                     </div>
                     <form:form method="post" action="agregarDescuento" modelAttribute="descuento">
                         <div>
-	                        <form:input path="valorFijo" type="text" class="form-control input-sm" placeholder="Monto fijo"/>
+	                        <form:input path="valorFijo" type="number" value="0" min="0" class="form-control input-sm" placeholder="Monto fijo"/>
 	                    </div>
                         <div>
-	                        <form:input path="valorPorcentual" type="text" class="form-control input-sm" placeholder="Monto porcentual"/>
+	                        <form:input path="valorPorcentual" type="number" value="0" min="0" class="form-control input-sm" placeholder="Monto porcentual"/>
 	                    </div>
 	                    <div class="at_btn_agregar">
 	                        <input type="submit" class="btn btn-success btn-md" value="Agregar"/>
@@ -109,10 +109,14 @@
                 <div class="col-md-2"></div>
                 <div class="col-md-2"></div>
                 <div class="col-md-2"></div>
-                <div class="col-md-2"></div>
+                <div class="col-md-2">
+                     <form:form action="comprarSangucheto" method="post">
+                        <input type="submit" class="btn btn-success btn-md margen_izq" value="Comprar sangucheto">
+                    </form:form>                   
+                </div>
                 <div class="col-md-2">
                     <form:form action="vaciarSangucheto" method="post">
-                        <input type="submit" class="btn btn-default btn-danger btn-md" value="Vaciar carrito">
+                        <input type="submit" class="btn btn-danger btn-md margen_der" value="Vaciar carrito">
                     </form:form>
                 </div>
             </div>

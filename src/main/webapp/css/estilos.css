@@ -122,7 +122,27 @@
     text-align: center;
 }
 
-a:link {color: white;} 		                    /* unvisited link 	*/
-a:visited {color: white;} 	                    /* visited link 	*/
-a:hover {color: yellow;text-decoration: none} 	/* mouse over link 	*/
-a:active {color: white;}	                    /* selected link 	*/
+a:link { /* unvisited link */
+    color: white;
+}
+
+a:visited { /* visited link */
+    color: white;
+}
+
+a:hover { /* mouse over link */
+    color: yellow;
+    text-decoration: none;
+} 
+
+a:active { /* selected link 	*/
+    color: white;
+}
+
+.margen_izq {
+    margin-left: 2em;
+}
+
+.margen_der {
+    margin-right: 4em;
+}
