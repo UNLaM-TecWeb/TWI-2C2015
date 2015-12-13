@@ -77,10 +77,10 @@
                     </div>
                     <form:form method="post" action="agregarDescuento" modelAttribute="descuento">
                         <div>
-	                        <form:input path="valorFijo" type="number" value="0" min="0" class="form-control input-sm" placeholder="Monto fijo"/>
+	                        Monto fijo<form:input path="valorFijo" type="number" value="0" min="0" class="form-control input-sm"/>
 	                    </div>
                         <div>
-	                        <form:input path="valorPorcentual" type="number" value="0" min="0" class="form-control input-sm" placeholder="Monto porcentual"/>
+	                        Monto porcentual<form:input path="valorPorcentual" type="number" value="0" min="0" class="form-control input-sm"/>
 	                    </div>
 	                    <div class="at_btn_agregar">
 	                        <input type="submit" class="btn btn-success btn-md" value="Agregar"/>
