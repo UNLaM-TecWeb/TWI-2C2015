@@ -110,14 +110,10 @@
                 <div class="col-md-2"></div>
                 <div class="col-md-2"></div>
                 <div class="col-md-2">
-                     <form:form action="comprarSangucheto" method="post">
-                        <input type="submit" class="btn btn-success btn-md margen_izq" value="Comprar sangucheto">
-                    </form:form>                   
+                    <a href="cargarListaConIngredientes?accion=graciasporsucompra" class="btn btn-success btn-md margen_izq">Comprar sangucheto</a>
                 </div>
                 <div class="col-md-2">
-                    <form:form action="vaciarSangucheto" method="post">
-                        <input type="submit" class="btn btn-danger btn-md margen_der" value="Vaciar carrito">
-                    </form:form>
+                   <a href="vaciarSangucheto" class="btn btn-danger btn-md margen_der">Vaciar carrito</a>
                 </div>
             </div>
         </div> <!-- Cierra container -->        

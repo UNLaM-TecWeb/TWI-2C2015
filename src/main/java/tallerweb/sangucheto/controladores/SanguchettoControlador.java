@@ -69,7 +69,13 @@ public class SanguchettoControlador {
 	public ModelAndView elegirIngrediente(@RequestParam("accion") String accion) {
 		ModelAndView mav;
 		
-		if (accion.equals("listaingredientes"))
+		if (accion.equals("graciasporsucompra")) {
+			mav = new ModelAndView("graciasporsucompra");
+			mav.addObject("listaDeIngredientesSangucheto", Sanguchetto.getInstance().verIngredientesYCondimentos());
+			mav.addObject("precioTotalSangucheto", Sanguchetto.getInstance().getPrecioConDescuento());
+		}
+		
+		else if (accion.equals("listaingredientes"))
 			mav = new ModelAndView("listaingredientes");
 		
 		else if (accion.equals("altaingrediente")) {
@@ -95,6 +101,7 @@ public class SanguchettoControlador {
 			mav.addObject("ingredienteConStock", new IngredienteConStock());
 		}
 		
+		// La vista "graciasporsucompra" no usa este Object.
 		mav.addObject("mapa", Stock.getInstance().obtenerStock());
 		return mav;
 	}

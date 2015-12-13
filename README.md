@@ -15,7 +15,7 @@ Enunciado
     2. ~~y el ahorro acumulado en el carrito.~~
   + Esta pantalla tiene dos botones:
     1. ~~cancelar, que elimina todo lo agregado al carrito y lo restituye al stock;~~
-    2. y confirmar, que lleva a una pantalla donde se muestra como queda el carrito y su precio final.
+    2. ~~y confirmar, que lleva a una pantalla donde se muestra como queda el carrito y su precio final.~~
 2. ~~Una pantalla que muestre el stock de todos los productos existentes.~~
 3. ~~Una pantalla para dar de alta un producto.~~
 4. ~~Una pantalla para agregar stock a determinado producto, es decir se suma a lo que tiene.~~
