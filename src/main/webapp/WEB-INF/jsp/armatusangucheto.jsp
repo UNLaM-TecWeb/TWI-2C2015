@@ -110,7 +110,7 @@
                 <div class="col-md-2"></div>
                 <div class="col-md-2"></div>
                 <div class="col-md-2">
-                    <a href="cargarListaConIngredientes?accion=graciasporsucompra" class="btn btn-success btn-md margen_izq">Comprar sangucheto</a>
+                    <a href="cargarListaConIngredientes?accion=comprarSangucheto" class="btn btn-success btn-md margen_izq">Comprar sangucheto</a>
                 </div>
                 <div class="col-md-2">
                    <a href="vaciarSangucheto" class="btn btn-danger btn-md margen_der">Vaciar carrito</a>

@@ -69,10 +69,14 @@ public class SanguchettoControlador {
 	public ModelAndView elegirIngrediente(@RequestParam("accion") String accion) {
 		ModelAndView mav;
 		
-		if (accion.equals("graciasporsucompra")) {
+		if (accion.equals("comprarSangucheto")) {
 			mav = new ModelAndView("graciasporsucompra");
 			mav.addObject("listaDeIngredientesSangucheto", Sanguchetto.getInstance().verIngredientesYCondimentos());
 			mav.addObject("precioTotalSangucheto", Sanguchetto.getInstance().getPrecioConDescuento());
+			
+			// Luego de comprar debo vaciar la lista de ingredientes y de descuentos.
+			Sanguchetto.getInstance().vaciar();
+			Sanguchetto.getInstance().vaciarDescuentos();
 		}
 		
 		else if (accion.equals("listaingredientes"))
