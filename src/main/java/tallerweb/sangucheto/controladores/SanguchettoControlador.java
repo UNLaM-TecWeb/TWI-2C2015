@@ -95,7 +95,7 @@ public class SanguchettoControlador {
 		else { // if (accion.equals("armatusangucheto"))
 			mav = new ModelAndView("armatusangucheto");
 			mav.addObject("descuento", new Descuento());
-			mav.addObject("precioTotalSangucheto", Sanguchetto.getInstance().getPrecioConDescuento());
+			mav.addObject("precioConDescuentoSangucheto", Sanguchetto.getInstance().getPrecioConDescuento());
 			mav.addObject("ahorroSangucheto", Sanguchetto.getInstance().calcularDescuentoTotal());
 			mav.addObject("listaDeIngredientesSangucheto", Sanguchetto.getInstance().verIngredientesYCondimentos());
 			mav.addObject("ingredienteConStock", new IngredienteConStock());

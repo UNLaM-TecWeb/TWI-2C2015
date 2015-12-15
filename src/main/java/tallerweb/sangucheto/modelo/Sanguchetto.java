@@ -96,15 +96,21 @@ public class Sanguchetto {
 	}
 	
 	public Double calcularDescuentoTotal() {
-		Double descuentoTotal = 0.0;
+		Double montoFijoTotal = 0.0;
+		Double montoPorcentualTotal = 0.0;
 		
-		for (Descuento cadaDescuento : descuentos)
-			descuentoTotal += cadaDescuento.calcularDescuento(getPrecio());
+		// Primero buscamos todos los descuentos de monto fijo y monto porcentual...
+		for (Descuento cadaDescuento : descuentos) {
+			montoFijoTotal += cadaDescuento.getValorFijo();
+			montoPorcentualTotal += cadaDescuento.getValorPorcentual();
+		}
 		
-		return descuentoTotal;
+		// ... una vez que tenemos esos datos calculamos el descuento. 
+		Descuento descuentoTotal = new Descuento(montoFijoTotal, montoPorcentualTotal);
+		return descuentoTotal.calcularDescuento(this.getPrecio());
 	}
 	
 	public Double getPrecioConDescuento() {
-		return (getPrecio() - calcularDescuentoTotal());
+		return (this.getPrecio() - this.calcularDescuentoTotal());
 	}
 }

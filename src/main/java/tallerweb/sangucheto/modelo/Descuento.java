@@ -17,12 +17,16 @@ public class Descuento {
 	 * @return el total del descuento.
 	 */
 	public Double calcularDescuento(Double precioSangucheto) {
-		Double nuevoPrecio;
+		Double precioConDescuento = precioSangucheto;
 		
-		nuevoPrecio = precioSangucheto - valorFijo;
-		nuevoPrecio = nuevoPrecio * (valorPorcentual/100);
+		if(valorFijo > 0.0)
+			precioConDescuento = precioSangucheto - valorFijo;
 		
-		return precioSangucheto - nuevoPrecio;
+		if(valorPorcentual > 0.0)
+			precioConDescuento = precioConDescuento * (valorPorcentual/100);
+		
+		// El descuento lo obtenemos de la diferencia entre el precio original y el precio con descuento.
+		return (precioSangucheto - precioConDescuento);
 	}
 	
 	public Double getValorFijo() {

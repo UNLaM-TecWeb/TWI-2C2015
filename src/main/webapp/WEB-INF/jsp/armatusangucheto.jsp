@@ -70,7 +70,7 @@
             <div class="row at_off_box_background">
                 <div class="col-md-4 at_off_box">
                     <div class="at_off_box_title">
-                        <p>Precio $ ${precioTotalSangucheto} / Ahorro $ ${ahorroSangucheto}</p>
+                        <p>Precio $ ${precioConDescuentoSangucheto} / Ahorro $ ${ahorroSangucheto}</p>
                     </div>
                     <div>
                         <p>¿T&eacute;nes un descuento? Ingresalo ac&aacute;:</p>
