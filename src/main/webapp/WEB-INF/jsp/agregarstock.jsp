@@ -55,7 +55,7 @@
                         ${ingrediente.value}
                     </div>
                     <div class="col-sm-2 at_list_item">
-                        <form:input path="stock"  value="0" min="0" type="number" class="form-control input-sm"/>
+                        <form:input path="stock"  value="0" min="0" type="number" class="form-control input-sm" id="${ingrediente.key.nombre}" onchange="validar('${ingrediente.key.nombre}', 0)"/>
                     </div>
                     <div class="col-sm-2 at_list_item">
                         <input type="submit" class="btn btn-success btn-sm" value="Agregar"/>	
@@ -68,5 +68,7 @@
     <script src='<c:url value="/js/jquery-1.11.3.min.js" />' type="text/javascript"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src='<c:url value="/js/bootstrap.min.js" />' type="text/javascript" ></script>
+    <!-- Incluye nuestra funcion en javascript para validar campos -->
+    <script src='<c:url value="/js/codigo.js" />' type="text/javascript"></script> 
 </body>
 </html>

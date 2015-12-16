@@ -55,7 +55,7 @@
 			                	${ingrediente.value}
 			                </div>
 			                <div class="col-sm-2 at_list_item">
-			                	<form:input path="stock"  value="1" min="1" type="number" class="form-control input-sm"/>
+			                	<form:input path="stock"  value="1" min="1" type="number" class="form-control input-sm" id="${ingrediente.key.nombre}" onchange="validar('${ingrediente.key.nombre}', 1)"/>
 			                </div>
 			                <div class="col-sm-2 at_list_item">
 			                	<input type="submit" class="btn btn-success btn-xs" value="Agregar"/>	
@@ -77,10 +77,10 @@
                     </div>
                     <form:form method="post" action="agregarDescuento" modelAttribute="descuento">
                         <div>
-	                        Monto fijo<form:input path="valorFijo" type="number" value="0" min="0" class="form-control input-sm"/>
+	                        Monto fijo<form:input path="valorFijo" type="number" value="0" min="0" class="form-control input-sm" id="valorFijo" onchange="validar('valorFijo', 0)"/>
 	                    </div>
                         <div>
-	                        Monto porcentual<form:input path="valorPorcentual" type="number" value="0" min="0" class="form-control input-sm"/>
+	                        Monto porcentual<form:input path="valorPorcentual" type="number" value="0" min="0" class="form-control input-sm" id="valorPorcentual" onchange="validar('valorPorcentual', 0)"/>
 	                    </div>
 	                    <div class="at_btn_agregar">
 	                        <input type="submit" class="btn btn-success btn-md" value="Agregar"/>
@@ -121,5 +121,7 @@
 	<script src='<c:url value="/js/jquery-1.11.3.min.js" />' type="text/javascript"></script>
 	<!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src='<c:url value="/js/bootstrap.min.js" />' type="text/javascript" ></script>
+	<!-- Incluye nuestra funcion en javascript para validar campos -->
+    <script src='<c:url value="/js/codigo.js" />' type="text/javascript"></script> 
     </body>
 </html>

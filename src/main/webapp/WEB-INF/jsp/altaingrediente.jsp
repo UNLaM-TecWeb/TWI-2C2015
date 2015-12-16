@@ -44,10 +44,10 @@
         <div class="row">
             <form:form method="post" action="crearIngrediente" modelAttribute="ingrediente">
                 <div class="col-sm-3 at_list_item">
-                    <form:input path="nombre" type="text" class="form-control" value="" autofocus="true"/>
+                    <form:input path="nombre" type="text" value="Ingrese aqui el nombre" class="form-control" autofocus="true" id="nombre" onchange="validar('nombre', 'Ingrese aqui el nombre')"/>
                 </div>
                 <div class="col-sm-3 at_list_item">
-                    <form:input path="precio" class="form-control" value="0" min="0" type="number"/>
+                    <form:input path="precio" class="form-control" value="0" min="0" type="number" id="precio" onchange="validar('precio', 0)"/>
                 </div>
                 <div class="col-sm-3 at_list_item">
                 	<form:select path="tipo" class="form-control">
@@ -79,5 +79,7 @@
     <script src='<c:url value="/js/jquery-1.11.3.min.js" />' type="text/javascript"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src='<c:url value="/js/bootstrap.min.js" />' type="text/javascript" ></script>
+   	<!-- Incluye nuestra funcion en javascript para validar campos -->
+    <script src='<c:url value="/js/codigo.js" />' type="text/javascript"></script> 
 </body>
 </html>
