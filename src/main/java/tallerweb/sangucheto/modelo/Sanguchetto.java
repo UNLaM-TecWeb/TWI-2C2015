@@ -95,6 +95,10 @@ public class Sanguchetto {
 		descuentos.add(new Descuento(valorFijo, valorPorcentual));
 	}
 	
+	/**
+	 * Calcula el total de descuento de todos los descuentos.
+	 * @return la sumatoria de todos los descuentos.
+	 * */
 	public Double calcularDescuentoTotal() {
 		Double montoFijoTotal = 0.0;
 		Double montoPorcentualTotal = 0.0;
@@ -112,5 +116,14 @@ public class Sanguchetto {
 	
 	public Double getPrecioConDescuento() {
 		return (this.getPrecio() - this.calcularDescuentoTotal());
+	}
+	
+	public List<Descuento> verDescuentos(){
+		List<Descuento> listaDeDescuentos = new LinkedList<Descuento>();
+		
+		for (Descuento cadaElemento : descuentos)
+			listaDeDescuentos.add(cadaElemento);
+		
+		return listaDeDescuentos;
 	}
 }
