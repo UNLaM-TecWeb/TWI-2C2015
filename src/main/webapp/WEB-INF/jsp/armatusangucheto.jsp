@@ -12,7 +12,7 @@
         <link href='<c:url value="/css/estilos.css"/>' type="text/css" rel="stylesheet" media="screen">
         <title>Sangucheto S.A.</title>
     </head>
-    <body>
+    <body onshow="validarStock(${faltaStock})">
 
         <div class="container">
             <div class="row">
@@ -44,7 +44,7 @@
             <c:forEach var="ingrediente" items="${mapa}">
 	            <c:if test="${ingrediente.value > 0}">
 		            <div class="row">
-		            	<form:form method="post" action="agregarIngrediente?nombreIngrediente=${ingrediente.key.nombre}" modelAttribute="ingredienteConStock">
+		            	<form:form method="post" action="validarExistenciaDeStock?nombreIngrediente=${ingrediente.key.nombre}" modelAttribute="ingredienteConStock">
 			                <div class="col-sm-4 at_list_item">
 			                	${ingrediente.key.nombre}
 			                </div>

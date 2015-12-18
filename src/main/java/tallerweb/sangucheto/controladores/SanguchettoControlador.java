@@ -66,7 +66,8 @@ public class SanguchettoControlador {
 	}
 	
 	@RequestMapping("/cargarListaConIngredientes")
-	public ModelAndView elegirIngrediente(@RequestParam("accion") String accion) {
+	public ModelAndView elegirIngrediente(	@RequestParam("accion") String accion, 
+											@RequestParam("validacion") String validacion) {
 		ModelAndView mav;
 		
 		if (accion.equals("comprarSangucheto")) {
@@ -103,6 +104,11 @@ public class SanguchettoControlador {
 			mav.addObject("ahorroSangucheto", Sanguchetto.getInstance().calcularDescuentoTotal());
 			mav.addObject("listaDeIngredientesSangucheto", Sanguchetto.getInstance().verIngredientesYCondimentos());
 			mav.addObject("ingredienteConStock", new IngredienteConStock());
+			
+			if (validacion.equals("faltaStock"))
+				mav.addObject("faltaStock", new String("No hay stock suficiente para la cantidad que desea comprar."));
+			else
+				mav.addObject("faltaStock", new String(""));
 		}
 		
 		// La vista "graciasporsucompra" no usa este Object.
@@ -112,13 +118,13 @@ public class SanguchettoControlador {
 
 	@RequestMapping("/agregarIngrediente")
 	public ModelAndView agregarIngrediente( @RequestParam("nombreIngrediente") String nombreIngrediente,
-											@ModelAttribute("ingredienteConStock") IngredienteConStock cantidadIngrediente) {		
+											@RequestParam("cantidadIngrediente") Integer cantidadIngrediente) {		
 		Ingrediente temporal = new Ingrediente();
 		temporal = Stock.getInstance().obtenerIngredientePorNombre(nombreIngrediente);
 		
-		for (int i = 0; i < cantidadIngrediente.getStock(); i++)
+		for (int i = 0; i < cantidadIngrediente; i++)
 			Sanguchetto.getInstance().agregarIngrediente(temporal);
-		Stock.getInstance().comprarIngrediente(temporal, cantidadIngrediente.getStock());
+		Stock.getInstance().comprarIngrediente(temporal, cantidadIngrediente);
 
 		return new ModelAndView("redirect:cargarListaConIngredientes?accion=armatusangucheto");
 	}
@@ -127,5 +133,20 @@ public class SanguchettoControlador {
 	public ModelAndView agregarDescuento(@ModelAttribute("descuento") Descuento descuento) {		
 		Sanguchetto.getInstance().agregarDescuento(descuento.getValorFijo(), descuento.getValorPorcentual());
 		return new ModelAndView("redirect:cargarListaConIngredientes?accion=armatusangucheto");
+	}
+	
+	@RequestMapping("/validarExistenciaDeStock")
+	public ModelAndView validarExistenciaDeStock(	@RequestParam("nombreIngrediente") String nombreIngrediente,
+													@ModelAttribute("ingredienteConStock") IngredienteConStock cantidadIngrediente) {
+		Ingrediente temporal = Stock.getInstance().obtenerIngredientePorNombre(nombreIngrediente);
+		Integer stockActual = Stock.getInstance().obtenerStockDisponible(temporal);
+		
+		// Si la cantidad que se desea comprar no supera nuestro stock agregamos los ingredientes al sangucheto...
+		if (stockActual >= cantidadIngrediente.getStock())
+			return new ModelAndView("redirect:agregarIngrediente?nombreIngrediente=" + nombreIngrediente + "&cantidadIngrediente=" + cantidadIngrediente);
+		
+		// Si la cantidad supera nuestro stock cancelamos la operación e informamos al usuario...
+		else
+			return new ModelAndView("redirect:cargarListaConIngredientes?accion=armatusangucheto&validacion=faltaStock");
 	}
 }
