@@ -12,7 +12,7 @@
         <link href='<c:url value="/css/estilos.css"/>' type="text/css" rel="stylesheet" media="screen">
         <title>Sangucheto S.A.</title>
     </head>
-    <body onshow="validarStock(${faltaStock})">
+    <body onload="validarStock('${faltaStock}')">
 
         <div class="container">
             <div class="row">
@@ -21,13 +21,13 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-1"></div>
-                <div class="col-md-2 at_navbar_btn"><a href="cargarListaConIngredientes?accion=armatusangucheto">Arma tu<br>sangucheto</a></div>
-                <div class="col-md-2 at_navbar_btn"><a href="cargarListaConIngredientes?accion=listaingredientes">Listar<br>ingredientes</a></div>
-                <div class="col-md-2 at_navbar_btn"><a href="cargarListaConIngredientes?accion=altaingrediente">Alta de<br>ingredientes</a></div>
-                <div class="col-md-2 at_navbar_btn"><a href="cargarListaConIngredientes?accion=bajaingrediente">Baja de<br>ingredientes</a></div>
-                <div class="col-md-2 at_navbar_btn"><a href="cargarListaConIngredientes?accion=agregarstock">Agregar stock<br>a ingrediente</a></div>
-				<div class="col-md-1"></div>
+            <div class="col-md-1"></div>
+            <div class="col-md-2 at_navbar_btn"><a href="cargarListaConIngredientes?accion=armatusangucheto&validacion=''">Arma tu<br>sangucheto</a></div>
+            <div class="col-md-2 at_navbar_btn"><a href="cargarListaConIngredientes?accion=listaingredientes&validacion=''">Listar<br>ingredientes</a></div>
+            <div class="col-md-2 at_navbar_btn"><a href="cargarListaConIngredientes?accion=altaingrediente&validacion=''">Alta de<br>ingredientes</a></div>
+            <div class="col-md-2 at_navbar_btn"><a href="cargarListaConIngredientes?accion=bajaingrediente&validacion=''">Baja de<br>ingredientes</a></div>
+            <div class="col-md-2 at_navbar_btn"><a href="cargarListaConIngredientes?accion=agregarstock&validacion=''">Agregar stock<br>a ingrediente</a></div>
+            <div class="col-md-1"></div>
             </div>
             <div class="row">
                 <div class="col-sm-12 at_page_header">

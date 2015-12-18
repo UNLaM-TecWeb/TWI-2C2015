@@ -20,7 +20,7 @@ public class SanguchettoControlador {
 	@RequestMapping("/crearIngrediente")
 	public ModelAndView crearIngrediente(@ModelAttribute("ingrediente") Ingrediente ingrediente) {
 		Stock.getInstance().agregarIngrediente(ingrediente);
-		return new ModelAndView("redirect:cargarListaConIngredientes?accion=altaingrediente");
+		return new ModelAndView("redirect:cargarListaConIngredientes?accion=altaingrediente&validacion=''");
 	}
 	
 	@RequestMapping("/modificarStock")
@@ -35,7 +35,7 @@ public class SanguchettoControlador {
 		else
 			Stock.getInstance().comprarIngrediente(temporal, ics.getStock());
 
-		return new ModelAndView("redirect:cargarListaConIngredientes?accion=agregarstock"); 
+		return new ModelAndView("redirect:cargarListaConIngredientes?accion=agregarstock&validacion=''"); 
 	}
 	
 	@RequestMapping("/bajaIngrediente")
@@ -43,7 +43,7 @@ public class SanguchettoControlador {
 		Ingrediente temporal = new Ingrediente();
 		temporal = Stock.getInstance().obtenerIngredientePorNombre(nombreIngrediente);
 		Stock.getInstance().eliminarIngrediente(temporal);
-		return new ModelAndView("redirect:cargarListaConIngredientes?accion=bajaingrediente");
+		return new ModelAndView("redirect:cargarListaConIngredientes?accion=bajaingrediente&validacion=''");
 	}
 	
 	@RequestMapping("/vaciarSangucheto")
@@ -62,7 +62,7 @@ public class SanguchettoControlador {
 		sangucheto.vaciar();
 		sangucheto.vaciarDescuentos();
 		
-		return new ModelAndView("redirect:cargarListaConIngredientes?accion=armatusangucheto");
+		return new ModelAndView("redirect:cargarListaConIngredientes?accion=armatusangucheto&validacion=''");
 	}
 	
 	@RequestMapping("/cargarListaConIngredientes")
@@ -126,13 +126,13 @@ public class SanguchettoControlador {
 			Sanguchetto.getInstance().agregarIngrediente(temporal);
 		Stock.getInstance().comprarIngrediente(temporal, cantidadIngrediente);
 
-		return new ModelAndView("redirect:cargarListaConIngredientes?accion=armatusangucheto");
+		return new ModelAndView("redirect:cargarListaConIngredientes?accion=armatusangucheto&validacion=''");
 	}
 	
 	@RequestMapping("/agregarDescuento")
 	public ModelAndView agregarDescuento(@ModelAttribute("descuento") Descuento descuento) {		
 		Sanguchetto.getInstance().agregarDescuento(descuento.getValorFijo(), descuento.getValorPorcentual());
-		return new ModelAndView("redirect:cargarListaConIngredientes?accion=armatusangucheto");
+		return new ModelAndView("redirect:cargarListaConIngredientes?accion=armatusangucheto&validacion=''");
 	}
 	
 	@RequestMapping("/validarExistenciaDeStock")
@@ -143,7 +143,7 @@ public class SanguchettoControlador {
 		
 		// Si la cantidad que se desea comprar no supera nuestro stock agregamos los ingredientes al sangucheto...
 		if (stockActual >= cantidadIngrediente.getStock())
-			return new ModelAndView("redirect:agregarIngrediente?nombreIngrediente=" + nombreIngrediente + "&cantidadIngrediente=" + cantidadIngrediente);
+			return new ModelAndView("redirect:agregarIngrediente?nombreIngrediente=" + nombreIngrediente + "&cantidadIngrediente=" + cantidadIngrediente.getStock());
 		
 		// Si la cantidad supera nuestro stock cancelamos la operación e informamos al usuario...
 		else

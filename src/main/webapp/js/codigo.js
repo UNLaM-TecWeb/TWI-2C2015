@@ -5,5 +5,5 @@ function validar(inputId, defaultValue) {
 
 function validarStock(bandera) {
 	if (bandera != "")
-		alert(badera);
+		alert(bandera);
 }
